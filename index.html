@@ -86,9 +86,9 @@
     {"@context":"https://schema.org","@type":"Organization","name":"Luggage Outlet Singapore","alternateName":["Sin Kwang Wah Trading","Sin Kwang Wah","SKW Luggage","Luggage Outlet SG"],"url":"https://www.luggageoutlet.sg","foundingDate":"1979","sameAs":["https://www.instagram.com/luggageoutletsg","https://www.facebook.com/SGLuggageOutlet","https://www.tiktok.com/@luggageoutletsg","https://www.youtube.com/@luggageoutletsg","https://twitter.com/luggageoutletsg"]}
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- Google Translate Widget -->
-    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-    <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"languages":["en","zh-CN","zh-TW","ms","ja","ko","th","vi","id","ta","hi"],"wrapper_selector":".gtranslate_wrapper","float_switcher_open_direction":"bottom","switcher_horizontal_position":"right"};</script>
+    <!-- Google Translate Widget (dropdown in nav) -->
+    <script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
+    <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"languages":["en","zh-CN","zh-TW","ms","ja","ko","th","vi","id","ta","hi"],"wrapper_selector":".gtranslate_wrapper"};</script>
     <style>
         :root{--navy:#022461;--navy-dark:#011638;--gold:#c8a45e;--gold-light:#e8d5a8;--white:#fff;--off-white:#f7f6f3;--gray-100:#e5e7eb;--gray-300:#d1d5db;--gray-500:#6b7280;--gray-800:#1f2937;--gray-900:#111827;}
         *{margin:0;padding:0;box-sizing:border-box;}
@@ -109,12 +109,18 @@
         .nav-cta{background:var(--gold) !important;color:var(--navy) !important;padding:9px 22px;border-radius:6px;font-weight:700 !important;}
         
         .hamburger{display:none;color:var(--white);font-size:1.5rem;cursor:pointer;}
+        /* GTranslate dropdown styling in nav */
+        .gtranslate_wrapper select{background:rgba(255,255,255,0.1);color:var(--white);border:1px solid rgba(255,255,255,0.2);border-radius:4px;padding:4px 8px;font-size:0.75rem;cursor:pointer;outline:none;}
+        .gtranslate_wrapper select:hover{border-color:var(--gold);}
+        .gtranslate_wrapper select option{background:var(--navy-dark);color:var(--white);}
+        .gtranslate_wrapper a{display:none !important;}
         @media(max-width:768px){
             .hamburger{display:block;}
             .nav-links{display:none !important;position:absolute;top:100%;left:0;right:0;background:var(--navy-dark);flex-direction:column;padding:16px 24px;gap:14px;border-top:1px solid rgba(255,255,255,0.06);}
             .nav-links.mobile-open{display:flex !important;}
             .nav-links a{font-size:0.9rem;padding:6px 0;}
             .nav-cta{text-align:center;display:block;padding:10px !important;}
+            .gtranslate-mobile{display:block !important;}
         }
 
 
@@ -343,8 +349,12 @@
             <li><a href="operations.html">About Us</a></li>
             <li><a href="travel-tips.html">Travel Tips</a></li>
             <li><a href="https://wa.me/6567541322?text=Hi%2C%20I%27d%20like%20a%20corporate%20quote." class="nav-cta">Get a Quote</a></li>
+            <li class="gtranslate_wrapper" style="margin-left:4px;"></li>
         </ul>
-        <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">&#9776;</div>
+        <div style="display:flex;align-items:center;gap:8px;">
+            <div class="gtranslate_wrapper gtranslate-mobile" style="display:none;"></div>
+            <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">&#9776;</div>
+        </div>
         <script>document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){document.querySelector('.nav-links').classList.remove('mobile-open');});});</script>
     </div>
 </nav>
@@ -1230,8 +1240,6 @@ function botReply(input){
     div.innerHTML=html;msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;
 }
 </script>
-<div class="gtranslate_wrapper"></div>
-
 <script>
 // === CHAT BUBBLE POPUP (rotates messages, shows every 30s) ===
 (function(){
