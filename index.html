@@ -88,7 +88,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Google Translate Widget (dropdown in nav) -->
     <script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
-    <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"languages":["en","zh-CN","zh-TW","ms","ja","ko","th","vi","id","ta","hi"],"wrapper_selector":".gtranslate_wrapper"};</script>
+    <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"languages":["en","zh-CN","zh-TW","ms","ja","ko","th","vi","id","ta","hi","ar","bn","my","nl","fil","fr","de","el","he","it","km","lo","pt","ru","es","sw","tr","uk","ur"],"wrapper_selector":".gtranslate_wrapper"};</script>
     <style>
         :root{--navy:#022461;--navy-dark:#011638;--gold:#c8a45e;--gold-light:#e8d5a8;--white:#fff;--off-white:#f7f6f3;--gray-100:#e5e7eb;--gray-300:#d1d5db;--gray-500:#6b7280;--gray-800:#1f2937;--gray-900:#111827;}
         *{margin:0;padding:0;box-sizing:border-box;}
@@ -1132,19 +1132,47 @@ function sendQuick(btn){var text=btn.textContent;addMsg(text,'user');btn.parentE
 function sendMsg(){var input=document.getElementById('chatInput');var text=input.value.trim();if(!text)return;addMsg(text,'user');input.value='';setTimeout(function(){botReply(text);},600);}
 function addMsg(text,type){var msgs=document.getElementById('chatMessages');var div=document.createElement('div');div.className='chat-msg '+type;div.innerHTML='<div class="chat-bubble">'+text+'</div>';msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;}
 function detectLang(text){
+    // Script-based detection (Unicode ranges)
     if(/[\u4e00-\u9fff]/.test(text)) return 'zh';
     if(/[\u3040-\u309f\u30a0-\u30ff]/.test(text)) return 'ja';
     if(/[\uac00-\ud7af]/.test(text)) return 'ko';
     if(/[\u0e00-\u0e7f]/.test(text)) return 'th';
+    if(/[\u0600-\u06ff]/.test(text)) return 'ar';
     if(/[\u0900-\u097f]/.test(text)) return 'hi';
     if(/[\u0b80-\u0bff]/.test(text)) return 'ta';
-    var ms=['bagasi','beg','perjalanan','harga','kedai','alamat','bantuan','kecemasan','rosak','zip','roda','kunci'];
-    var vi=['hanh ly','vali','gia','cua hang','dia chi','khan cap','ho','khoa'];
-    var id=['koper','tas','harga','toko','alamat','darurat','rusak'];
+    if(/[\u0980-\u09ff]/.test(text)) return 'bn';
+    if(/[\u1000-\u109f]/.test(text)) return 'my';
+    if(/[\u1780-\u17ff]/.test(text)) return 'km';
+    if(/[\u0e80-\u0eff]/.test(text)) return 'lo';
+    if(/[\u0400-\u04ff]/.test(text)) return 'ru';
+    if(/[\u0370-\u03ff]/.test(text)) return 'el';
+    if(/[\u0590-\u05ff]/.test(text)) return 'he';
+    if(/[\u0a00-\u0a7f]/.test(text)) return 'pa';
+    if(/[\u0600-\u06ff\u0750-\u077f]/.test(text)&&/[\u0600-\u06ff]/.test(text)) return 'ar';
+    // Keyword-based detection (Latin-script languages)
     var tl=text.toLowerCase();
+    var ms=['bagasi','beg','perjalanan','harga','kedai','alamat','bantuan','kecemasan','rosak','zip','roda','kunci'];
+    var vi=['hanh ly','vali','gia','cua hang','dia chi','khan cap','ho','khoa','xin chao'];
+    var id=['koper','tas','toko','alamat','darurat','rusak','berapa','tolong'];
+    var fr=['bagage','valise','voyage','prix','magasin','aide','bonjour','merci'];
+    var es=['maleta','equipaje','viaje','precio','tienda','ayuda','hola','gracias'];
+    var de=['koffer','gepack','reise','preis','laden','hilfe','danke'];
+    var pt=['mala','bagagem','viagem','preco','loja','ajuda','obrigado'];
+    var it=['valigia','bagaglio','viaggio','prezzo','negozio','aiuto','grazie'];
+    var tr=['bavul','valiz','seyahat','fiyat','magaza','yardim','merhaba'];
+    var nl=['koffer','bagage','reis','prijs','winkel','hulp','dank'];
+    var fil=['maleta','biyahe','presyo','tindahan','tulong','salamat'];
     if(ms.some(function(w){return tl.includes(w);})) return 'ms';
     if(vi.some(function(w){return tl.includes(w);})) return 'vi';
     if(id.some(function(w){return tl.includes(w);})) return 'id';
+    if(fr.some(function(w){return tl.includes(w);})) return 'fr';
+    if(es.some(function(w){return tl.includes(w);})) return 'es';
+    if(de.some(function(w){return tl.includes(w);})) return 'de';
+    if(pt.some(function(w){return tl.includes(w);})) return 'pt';
+    if(it.some(function(w){return tl.includes(w);})) return 'it';
+    if(tr.some(function(w){return tl.includes(w);})) return 'tr';
+    if(nl.some(function(w){return tl.includes(w);})) return 'nl';
+    if(fil.some(function(w){return tl.includes(w);})) return 'fil';
     return 'en';
 }
 var i18n={
@@ -1181,7 +1209,37 @@ var i18n={
         fallback:'Xin chao! Toi co the giup gi? &#128522;'},
     id:{browse:'Kami punya berbagai koper! &#128188;<br><br><b>Hard-case:</b> 20" ($26.90), 24" ($35), 28" ($45)<br><b>Soft-case:</b> Dari $26.90<br><br><a href="shop.html" style="color:#f97316;font-weight:700;">Lihat toko</a>',
         contact:'Hubungi kami! &#128205;<br><br><b>Alamat:</b> Blk 1024 Yishun Industrial Park A, #03-29, Singapore 768763<br><b>Telepon:</b> <a href="tel:+6567541322" style="color:#f97316;font-weight:700;">6754 1322</a><br><b>WhatsApp:</b> <a href="https://wa.me/6567541322" style="color:#f97316;font-weight:700;">6754 1322</a>',
-        fallback:'Halo! Ada yang bisa saya bantu? &#128522;'}
+        fallback:'Halo! Ada yang bisa saya bantu? &#128522;'},
+    ar:{browse:'لدينا مجموعة واسعة من الحقائب! &#128188;<br><br><b>حقائب صلبة:</b> 20 بوصة ($26.90)، 24 بوصة ($35)، 28 بوصة ($45)<br><br><a href="shop.html" style="color:#f97316;font-weight:700;">تصفح المتجر</a>',
+        contact:'تواصل معنا! &#128205;<br><br><b>العنوان:</b> Blk 1024 Yishun Industrial Park A, #03-29, Singapore 768763<br><b>هاتف:</b> <a href="tel:+6567541322" style="color:#f97316;font-weight:700;">6754 1322</a><br><b>واتساب:</b> <a href="https://wa.me/6567541322" style="color:#f97316;font-weight:700;">6754 1322</a>',
+        fallback:'مرحبا! كيف يمكنني مساعدتك؟ &#128522;'},
+    fr:{browse:'Nous avons un large choix de bagages ! &#128188;<br><br><b>Valises rigides:</b> 20" ($26.90), 24" ($35), 28" ($45)<br><b>Valises souples:</b> dès $26.90<br><br><a href="shop.html" style="color:#f97316;font-weight:700;">Voir la boutique</a>',
+        contact:'Contactez-nous ! &#128205;<br><br><b>Adresse:</b> Blk 1024 Yishun Industrial Park A, #03-29, Singapore 768763<br><b>Tél:</b> <a href="tel:+6567541322" style="color:#f97316;font-weight:700;">6754 1322</a><br><b>WhatsApp:</b> <a href="https://wa.me/6567541322" style="color:#f97316;font-weight:700;">6754 1322</a>',
+        fallback:'Bonjour ! Comment puis-je vous aider ? &#128522;'},
+    es:{browse:'Tenemos una amplia gama de equipaje! &#128188;<br><br><b>Maletas rígidas:</b> 20" ($26.90), 24" ($35), 28" ($45)<br><b>Maletas blandas:</b> desde $26.90<br><br><a href="shop.html" style="color:#f97316;font-weight:700;">Ver tienda</a>',
+        contact:'Contáctenos! &#128205;<br><br><b>Dirección:</b> Blk 1024 Yishun Industrial Park A, #03-29, Singapore 768763<br><b>Tel:</b> <a href="tel:+6567541322" style="color:#f97316;font-weight:700;">6754 1322</a><br><b>WhatsApp:</b> <a href="https://wa.me/6567541322" style="color:#f97316;font-weight:700;">6754 1322</a>',
+        fallback:'¡Hola! ¿En qué puedo ayudarle? &#128522;'},
+    de:{browse:'Wir haben eine große Auswahl an Gepäck! &#128188;<br><br><b>Hartschalenkoffer:</b> 20" ($26.90), 24" ($35), 28" ($45)<br><b>Weichgepäck:</b> ab $26.90<br><br><a href="shop.html" style="color:#f97316;font-weight:700;">Shop ansehen</a>',
+        contact:'Kontaktieren Sie uns! &#128205;<br><br><b>Adresse:</b> Blk 1024 Yishun Industrial Park A, #03-29, Singapore 768763<br><b>Tel:</b> <a href="tel:+6567541322" style="color:#f97316;font-weight:700;">6754 1322</a><br><b>WhatsApp:</b> <a href="https://wa.me/6567541322" style="color:#f97316;font-weight:700;">6754 1322</a>',
+        fallback:'Hallo! Wie kann ich Ihnen helfen? &#128522;'},
+    pt:{browse:'Temos uma grande variedade de malas! &#128188;<br><br><b>Malas rígidas:</b> 20" ($26.90), 24" ($35), 28" ($45)<br><b>Malas flexíveis:</b> a partir de $26.90<br><br><a href="shop.html" style="color:#f97316;font-weight:700;">Ver loja</a>',
+        contact:'Contacte-nos! &#128205;<br><br><b>Morada:</b> Blk 1024 Yishun Industrial Park A, #03-29, Singapore 768763<br><b>Tel:</b> <a href="tel:+6567541322" style="color:#f97316;font-weight:700;">6754 1322</a>',
+        fallback:'Olá! Como posso ajudar? &#128522;'},
+    it:{browse:'Abbiamo una vasta gamma di valigie! &#128188;<br><br><b>Valigie rigide:</b> 20" ($26.90), 24" ($35), 28" ($45)<br><b>Valigie morbide:</b> da $26.90<br><br><a href="shop.html" style="color:#f97316;font-weight:700;">Vedi negozio</a>',
+        fallback:'Ciao! Come posso aiutarti? &#128522;'},
+    tr:{browse:'Geniş bir bavul yelpazemiz var! &#128188;<br><br><b>Sert bavul:</b> 20" ($26.90), 24" ($35), 28" ($45)<br><b>Yumuşak bavul:</b> $26.90\'dan başlayan<br><br><a href="shop.html" style="color:#f97316;font-weight:700;">Mağazayı gör</a>',
+        fallback:'Merhaba! Nasıl yardımcı olabilirim? &#128522;'},
+    ru:{browse:'У нас большой выбор чемоданов! &#128188;<br><br><b>Жёсткие:</b> 20" ($26.90), 24" ($35), 28" ($45)<br><b>Мягкие:</b> от $26.90<br><br><a href="shop.html" style="color:#f97316;font-weight:700;">Смотреть магазин</a>',
+        fallback:'Здравствуйте! Чем могу помочь? &#128522;'},
+    bn:{fallback:'হ্যালো! আমি কিভাবে সাহায্য করতে পারি? &#128522;'},
+    my:{fallback:'မင်္ဂလာပါ! ဘာကူညီပေးရမလဲ? &#128522;'},
+    km:{fallback:'សួស្តី! តើខ្ញុំអាចជួយអ្វីបាន? &#128522;'},
+    lo:{fallback:'ສະບາຍດີ! ຂ້ອຍຊ່ວຍຫຍັງໄດ້? &#128522;'},
+    el:{fallback:'Γεια σας! Πώς μπορώ να βοηθήσω; &#128522;'},
+    nl:{browse:'Wij hebben een groot assortiment koffers! &#128188;<br><br><b>Hardcase:</b> 20" ($26.90), 24" ($35), 28" ($45)<br><br><a href="shop.html" style="color:#f97316;font-weight:700;">Bekijk winkel</a>',
+        fallback:'Hallo! Hoe kan ik u helpen? &#128522;'},
+    fil:{browse:'Marami kaming luggage! &#128188;<br><br><b>Hard-case:</b> 20" ($26.90), 24" ($35), 28" ($45)<br><br><a href="shop.html" style="color:#f97316;font-weight:700;">Tingnan ang tindahan</a>',
+        fallback:'Kumusta! Paano kita matutulungan? &#128522;'}
 };
 var btnI18n={
     zh:{'Browse Luggage':'浏览行李箱','Sizes Guide':'尺寸指南','Contact Us':'联系我们','Corporate Orders':'企业订单',
@@ -1197,7 +1255,17 @@ var btnI18n={
         'Travel Tips':'Tips Perjalanan','Emergency Numbers':'Nombor Kecemasan','Luggage Repair':'Baiki Bagasi','Recommend For Me':'Cadangkan'},
     th:{'Browse Luggage':'ดูกระเป๋า','Sizes Guide':'คู่มือขนาด','Contact Us':'ติดต่อเรา','Recommend For Me':'แนะนำให้ฉัน'},
     vi:{'Browse Luggage':'Xem vali','Sizes Guide':'Hướng dẫn kích cỡ','Contact Us':'Liên hệ','Recommend For Me':'Gợi ý cho tôi'},
-    id:{'Browse Luggage':'Lihat Koper','Sizes Guide':'Panduan Ukuran','Contact Us':'Hubungi Kami','Recommend For Me':'Rekomendasikan'}
+    id:{'Browse Luggage':'Lihat Koper','Sizes Guide':'Panduan Ukuran','Contact Us':'Hubungi Kami','Recommend For Me':'Rekomendasikan'},
+    ar:{'Browse Luggage':'تصفح الحقائب','Sizes Guide':'دليل الأحجام','Contact Us':'اتصل بنا','Corporate Orders':'طلبات الشركات','Recommend For Me':'أوصي لي'},
+    fr:{'Browse Luggage':'Voir bagages','Sizes Guide':'Guide tailles','Contact Us':'Contactez-nous','Corporate Orders':'Commandes entreprise','Recommend For Me':'Recommandez-moi'},
+    es:{'Browse Luggage':'Ver equipaje','Sizes Guide':'Guía de tallas','Contact Us':'Contáctenos','Corporate Orders':'Pedidos corporativos','Recommend For Me':'Recomiéndame'},
+    de:{'Browse Luggage':'Gepäck ansehen','Sizes Guide':'Größenführer','Contact Us':'Kontakt','Corporate Orders':'Firmenbestellungen','Recommend For Me':'Empfehlung'},
+    pt:{'Browse Luggage':'Ver malas','Sizes Guide':'Guia de tamanhos','Contact Us':'Contacte-nos','Recommend For Me':'Recomende-me'},
+    it:{'Browse Luggage':'Vedi valigie','Sizes Guide':'Guida taglie','Contact Us':'Contattaci','Recommend For Me':'Consigliami'},
+    tr:{'Browse Luggage':'Bavulları gör','Sizes Guide':'Beden rehberi','Contact Us':'Bize ulaşın','Recommend For Me':'Önerin'},
+    ru:{'Browse Luggage':'Смотреть чемоданы','Sizes Guide':'Размеры','Contact Us':'Контакты','Corporate Orders':'Корпоративные заказы','Recommend For Me':'Порекомендуйте'},
+    nl:{'Browse Luggage':'Koffers bekijken','Sizes Guide':'Maatgids','Contact Us':'Contact','Recommend For Me':'Aanbevelen'},
+    fil:{'Browse Luggage':'Tingnan luggage','Sizes Guide':'Gabay sa sukat','Contact Us':'Makipag-ugnayan','Recommend For Me':'Irekomenda'}
 };
 function trBtn(label,lang){return (btnI18n[lang]&&btnI18n[lang][label])||label;}
 function botReply(input){
