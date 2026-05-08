@@ -1331,28 +1331,43 @@ function toggleCat(el){
     items.style.display=items.style.display==='none'?'block':'none';
 }
 function showPanel(id){
-    // Find which category this panel is in and show that tab
-    var panel = document.querySelector('[onclick*="'+id+'"]');
-    if(panel){
-        var cat = panel.closest('.tip-category');
+    // 1. Find the sidebar nav-item that calls this ID
+    var navItem = document.querySelector('[onclick*="\''+id+'\'"]');
+    if(!navItem) return;
+
+    // 2. Find which tip-category contains a matching panel
+    // Build search terms from the id (e.g. "korea-travel-guide-2026" -> ["korea","travel","guide"])
+    var words = id.replace(/---/g,' ').replace(/--/g,' ').replace(/-/g,' ').toLowerCase().split(' ').filter(function(w){return w.length>2;});
+
+    var bestPanel = null, bestScore = 0;
+    document.querySelectorAll('.tip-header').forEach(function(h){
+        var headerText = h.textContent.toLowerCase();
+        var score = 0;
+        words.forEach(function(w){ if(headerText.includes(w)) score++; });
+        if(score > bestScore){ bestScore = score; bestPanel = h.parentElement; }
+    });
+
+    if(bestPanel){
+        // 3. Show the correct tab category
+        var cat = bestPanel.closest('.tip-category');
         if(cat){
-            document.querySelectorAll('.tip-category').forEach(c=>c.style.display='none');
+            document.querySelectorAll('.tip-category').forEach(function(c){c.style.display='none';});
             cat.style.display='block';
+            // Update tab buttons
+            var catId = cat.id.replace('cat-','');
+            document.querySelectorAll('.tip-tab').forEach(function(t){
+                t.classList.remove('active');
+                if(t.getAttribute('onclick') && t.getAttribute('onclick').includes("'"+catId+"'")) t.classList.add('active');
+            });
         }
-        // Open the panel
-        var tipPanel = null;
-        document.querySelectorAll('.tip-header').forEach(h=>{
-            if(h.textContent.toLowerCase().includes(id.split('-')[0])){
-                tipPanel = h.parentElement;
-            }
-        });
-        if(tipPanel){
-            tipPanel.classList.add('open');
-            tipPanel.scrollIntoView({behavior:'smooth',block:'start'});
-        }
+        // 4. Open the panel and scroll to it
+        bestPanel.classList.add('open');
+        setTimeout(function(){ bestPanel.scrollIntoView({behavior:'smooth',block:'start'}); },100);
     }
-    document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
-    event.target.classList.add('active');
+
+    // 5. Highlight active sidebar item
+    document.querySelectorAll('.nav-item').forEach(function(n){n.classList.remove('active');});
+    if(event && event.target) event.target.classList.add('active');
 }
 function searchGuides(query){
     query=query.toLowerCase();
