@@ -43,4 +43,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://twinkles4131.github.io/skw-luggage/travel-tips.html"/>
   </url>
 
+  <!-- Blog -->
+  <url>
+    <loc>https://twinkles4131.github.io/skw-luggage/blog.html</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://twinkles4131.github.io/skw-luggage/blog.html"/>
+  </url>
+
 </urlset>
