@@ -1331,20 +1331,35 @@ function toggleCat(el){
     items.style.display=items.style.display==='none'?'block':'none';
 }
 function showPanel(id){
-    // 1. Find the sidebar nav-item that calls this ID
+    // 1. Get the nav-item text (the label the user clicked)
     var navItem = document.querySelector('[onclick*="\''+id+'\'"]');
     if(!navItem) return;
+    // Strip emoji and trim to get clean label like "USA Travel Guide"
+    var label = navItem.textContent.replace(/[\u{1F000}-\u{1FFFF}]|[\u2600-\u27BF]|[\uFE00-\uFEFF]/gu,'').trim().toLowerCase();
 
-    // 2. Find which tip-category contains a matching panel
-    // Build search terms from the id (e.g. "korea-travel-guide-2026" -> ["korea","travel","guide"])
-    var words = id.replace(/---/g,' ').replace(/--/g,' ').replace(/-/g,' ').toLowerCase().split(' ').filter(function(w){return w.length>2;});
-
+    // 2. Find the panel whose header text best matches this label
     var bestPanel = null, bestScore = 0;
     document.querySelectorAll('.tip-header').forEach(function(h){
-        var headerText = h.textContent.toLowerCase();
-        var score = 0;
-        words.forEach(function(w){ if(headerText.includes(w)) score++; });
-        if(score > bestScore){ bestScore = score; bestPanel = h.parentElement; }
+        // Strip emoji + toggle symbol from header
+        var hText = h.textContent.replace(/[\u{1F000}-\u{1FFFF}]|[\u2600-\u27BF]|[\uFE00-\uFEFF]|[+×]/gu,'').trim().toLowerCase();
+        // Exact match
+        if(hText === label){ bestPanel = h.parentElement; bestScore = 999; return; }
+        // Check if label is contained in header or vice versa
+        if(bestScore < 999){
+            var score = 0;
+            if(hText.includes(label)) score = label.length * 2;
+            else if(label.includes(hText)) score = hText.length * 2;
+            else {
+                // Word overlap with whole-word matching
+                var labelWords = label.split(/[\s—,]+/).filter(function(w){return w.length>2;});
+                labelWords.forEach(function(w){
+                    // Use word boundary check to avoid "usa" matching "asia"
+                    var regex = new RegExp('\\b'+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b');
+                    if(regex.test(hText)) score += w.length;
+                });
+            }
+            if(score > bestScore){ bestScore = score; bestPanel = h.parentElement; }
+        }
     });
 
     if(bestPanel){
@@ -1360,7 +1375,8 @@ function showPanel(id){
                 if(t.getAttribute('onclick') && t.getAttribute('onclick').includes("'"+catId+"'")) t.classList.add('active');
             });
         }
-        // 4. Open the panel and scroll to it
+        // 4. Close other panels, open this one, scroll
+        cat.querySelectorAll('.tip-panel').forEach(function(p){p.classList.remove('open');});
         bestPanel.classList.add('open');
         setTimeout(function(){ bestPanel.scrollIntoView({behavior:'smooth',block:'start'}); },100);
     }
