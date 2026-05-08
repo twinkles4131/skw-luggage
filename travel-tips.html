@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Tips & Guides — Luggage Outlet Singapore | Country Guides, Packing Tips, Emergency Numbers</title>
+    <meta name="description" content="Complete travel companion from Luggage Outlet Singapore. Country guides with emergency numbers, packing lists, luggage recommendations by traveller type, travel insurance tips. Est. 1979.">
+    <meta name="keywords" content="travel tips Singapore, Japan travel guide, Korea travel tips, packing list, TSA lock reset, luggage repair, travel insurance Singapore, best luggage for hiking, family travel tips, elderly travel tips">
+    <link rel="canonical" href="https://www.luggageoutlet.sg/pages/travel-tips">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#022461;--navy-dark:#011638;--navy-mid:#0a3280;--gold:#c8a45e;--gold-light:#dbb978;--white:#fff;--off-white:#f7f6f3;--gray-100:#e5e7eb;--gray-500:#6b7280;--gray-800:#1f2937;}
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'Inter',sans-serif;background:var(--navy-dark);color:var(--white);display:flex;flex-direction:column;min-height:100vh;}
+
+        /* NAV */
+        .top-nav{background:rgba(1,22,56,0.95);backdrop-filter:blur(12px);padding:12px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;z-index:100;}
+        .logo{text-decoration:none;color:var(--white);}
+        .logo-main{font-size:1.1rem;font-weight:800;letter-spacing:2px;}
+        .logo-sub{font-size:0.55rem;color:var(--gold);letter-spacing:3px;text-transform:uppercase;}
+        .top-links{display:flex;gap:20px;align-items:center;}
+        .top-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.8rem;font-weight:500;}
+        .top-links a:hover{color:var(--white);}
+        .top-links .cta{background:var(--gold);color:var(--navy);padding:7px 16px;border-radius:5px;font-weight:700;}
+
+        /* LAYOUT */
+        .layout{display:flex;flex:1;}
+
+        /* SIDEBAR */
+        .sidebar{width:280px;min-width:280px;background:var(--navy);border-right:1px solid rgba(255,255,255,0.06);padding:20px 0;overflow-y:auto;height:calc(100vh - 50px);position:sticky;top:50px;}
+        .sidebar-title{padding:0 18px 14px;font-size:0.68rem;color:var(--gold);text-transform:uppercase;letter-spacing:2px;font-weight:700;}
+        .nav-cat{padding:10px 18px;font-size:0.82rem;font-weight:700;color:rgba(255,255,255,0.8);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background 0.15s;border-left:3px solid transparent;}
+        .nav-cat:hover{background:rgba(255,255,255,0.04);}
+        .nav-cat.open{border-left-color:var(--gold);background:rgba(200,164,94,0.06);color:var(--white);}
+        .cat-arrow{font-size:0.6rem;color:rgba(255,255,255,0.3);transition:transform 0.2s;}
+        .nav-cat.open .cat-arrow{transform:rotate(90deg);color:var(--gold);}
+        .nav-items{padding:0;}
+        .nav-item{display:block;padding:7px 18px 7px 28px;font-size:0.75rem;color:rgba(255,255,255,0.5);cursor:pointer;text-decoration:none;transition:all 0.15s;border-left:3px solid transparent;}
+        .nav-item:hover{color:var(--white);background:rgba(255,255,255,0.03);}
+        .nav-item.active{color:var(--gold);border-left-color:var(--gold);background:rgba(200,164,94,0.05);}
+
+        /* CONTENT */
+        .content{flex:1;padding:14px 24px;overflow-y:auto;height:calc(100vh - 50px);}
+        .content-welcome{text-align:center;padding:80px 0;}
+        .content-welcome h1{font-size:2rem;font-weight:800;margin-bottom:12px;}
+        .content-welcome h1 span{color:var(--gold);}
+        .content-welcome p{color:rgba(255,255,255,0.5);font-size:1rem;max-width:500px;margin:0 auto;}
+        .content-panel{margin-bottom:8px !important;padding-bottom:8px !important;padding-top:0 !important;border-bottom:1px solid rgba(255,255,255,0.06);}
+        
+        .content-panel h2{color:var(--white);font-size:1rem;margin-bottom:6px;}
+        .content-panel h4{color:var(--gold);font-size:0.78rem;margin-bottom:4px;margin-top:6px;}
+        .content-panel table{border-collapse:collapse;width:100%;font-size:0.72rem;}
+        .content-panel td{padding:2px 6px;color:rgba(255,255,255,0.7);border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:top;}
+        .content-panel ul,.content-panel ol{padding-left:14px;font-size:0.72rem;color:rgba(255,255,255,0.7);}
+        .content-panel li{margin-bottom:1px;line-height:1.35;}
+        .content-panel p{font-size:0.72rem;color:rgba(255,255,255,0.6);line-height:1.5;}
+        .content-panel strong{color:var(--white);}
+        .content-panel div[style*="display:grid"]{margin-top:4px;}
+        .content-panel div[style*="display:flex"]{margin-top:2px;}
+        .content-panel > div{margin:0 !important;padding:0 !important;}
+        .content-panel div[style*="margin"]{margin-top:4px !important;margin-bottom:4px !important;}
+        .content-panel div[style*="padding-top"]{padding-top:6px !important;}
+        .content-panel div[style*="border-top"]{margin-top:6px !important;padding-top:6px !important;}
+
+        /* SEARCH */
+        .search-box{padding:0 18px 14px;}
+        .search-box input{width:100%;padding:8px 12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:var(--white);font-size:0.78rem;outline:none;}
+        .search-box input::placeholder{color:rgba(255,255,255,0.3);}
+        .search-box input:focus{border-color:var(--gold);}
+
+        @media(max-width:768px){
+            .sidebar{display:none;}
+            .content{padding:20px;}
+        }
+    </style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<div class="top-nav">
+    <a href="homepage-redesign.html" class="logo">
+        <div class="logo-main">LUGGAGE OUTLET</div>
+        <div class="logo-sub">Established 1979 · Singapore</div>
+    </a>
+    <div class="top-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#corporate">Corporate</a>
+        <a href="https://www.luggageoutlet.sg/collections">Shop</a>
+        <a href="index.html#quality">Quality</a>
+        <a href="operations.html">About Us</a>
+        <a href="travel-tips.html">Travel Tips</a>
+        <a href="https://wa.me/6567541322" class="cta">Get a Quote</a>
+    </div>
+</div>
+
+<div class="layout">
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="sidebar-title">✈ Travel Companion</div>
+        <div class="search-box">
+            <input type="text" placeholder="Search guides..." oninput="searchGuides(this.value)">
+        </div>
+<div class="nav-cat" onclick="toggleCat(this)">🌍 Country Guides <span class="cat-arrow">▶</span></div>
+            <div class="nav-items" style="display:none;">
+              <a class="nav-item" onclick="showPanel('japan-travel-guide-2026')">&#127471;&#127477; Japan Travel Guide</a>
+              <a class="nav-item" onclick="showPanel('korea-travel-guide-2026')">&#127472;&#127479; Korea Travel Guide</a>
+              <a class="nav-item" onclick="showPanel('europe-travel-guide---multi-city-tips')">&#127466;&#127482; Europe Travel Guide — Multi-City Tips</a>
+              <a class="nav-item" onclick="showPanel('thailand-travel-guide-2026')">&#127481;&#127469; Thailand Travel Guide</a>
+              <a class="nav-item" onclick="showPanel('usa-travel-guide-2026')">&#127482;&#127480; USA Travel Guide</a>
+              <a class="nav-item" onclick="showPanel('australia-travel-guide-2026')">&#127462;&#127482; Australia Travel Guide</a>
+              <a class="nav-item" onclick="showPanel('vietnam-travel-guide-2026')">&#127483;&#127475; Vietnam Travel Guide</a>
+              <a class="nav-item" onclick="showPanel('indonesia--bali--travel-guide-2026')">&#127470;&#127465; Indonesia (Bali) Travel Guide</a>
+              <a class="nav-item" onclick="showPanel('new-zealand-adventure-guide-2026')">&#127475;&#127487; New Zealand Adventure Guide</a>
+              <a class="nav-item" onclick="showPanel('hiking---trekking---what-bag-to-bring')">&#9968;&#65039; Hiking & Trekking — What Bag to Bring</a>
+              <a class="nav-item" onclick="showPanel('cruise-travel---what-to-pack---know')">&#127960;&#65039; Cruise Travel — What to Pack & Know</a>
+              <a class="nav-item" onclick="showPanel('malaysia-weekend-getaway---jb--kl--penan')">&#127474;&#127486; Malaysia Weekend Getaway — JB, KL, Penang</a>
+              <a class="nav-item" onclick="showPanel('maldives---beach-resort-guide')">&#127474;&#127483; Maldives & Beach Resort Guide</a>
+            </div>
+            <div class="nav-cat" onclick="toggleCat(this)">🧳 Luggage Tips <span class="cat-arrow">▶</span></div>
+            <div class="nav-items" style="display:none;">
+              <a class="nav-item" onclick="showPanel('tsa-lock-stuck--how-to-reset')">&#128274; TSA Lock Stuck? How to Reset</a>
+              <a class="nav-item" onclick="showPanel('broken-luggage-wheel---how-to-fix')">&#128296; Broken Luggage Wheel — How to Fix</a>
+              <a class="nav-item" onclick="showPanel('airline-damaged-your-luggage--how-to-cla')">&#128230; Airline Damaged Your Luggage? How to Claim</a>
+              <a class="nav-item" onclick="showPanel('luggage-zipper-stuck---quick-fixes')">&#128271; Luggage Zipper Stuck — Quick Fixes</a>
+            </div>
+            <div class="nav-cat" onclick="toggleCat(this)">🎒 Packing Lists <span class="cat-arrow">▶</span></div>
+            <div class="nav-items" style="display:none;">
+              <a class="nav-item" onclick="showPanel('business-trip---3-days--1-cabin-bag')">&#128188; Business Trip — 3 Days, 1 Cabin Bag</a>
+              <a class="nav-item" onclick="showPanel('family-holiday---packing-for-kids')">&#128106; Family Holiday — Packing for Kids</a>
+              <a class="nav-item" onclick="showPanel('travelling-with-elderly-parents---what-t')">&#128116; Travelling with Elderly Parents — What to Know</a>
+              <a class="nav-item" onclick="showPanel('travelling-with-young-kids---survival-gu')">&#128118; Travelling with Young Kids — Survival Guide</a>
+              <a class="nav-item" onclick="showPanel('backpacking-sea---what-to-pack-light')">&#127956;&#65039; Backpacking SEA — What to Pack Light</a>
+            </div>
+            <div class="nav-cat" onclick="toggleCat(this)">🛡️ Travel Insurance <span class="cat-arrow">▶</span></div>
+            <div class="nav-items" style="display:none;">
+              <a class="nav-item" onclick="showPanel('best-travel-insurance-singapore-2026---w')">&#128737;&#65039; Best Travel Insurance Singapore — What to Look For</a>
+              <a class="nav-item" onclick="showPanel('luggage-lost-by-airline---insurance-clai')">&#128176; Luggage Lost by Airline — Insurance Claim Steps</a>
+            </div>
+            <div class="nav-cat" onclick="toggleCat(this)">💼 Luggage Recommender <span class="cat-arrow">▶</span></div>
+            <div class="nav-items" style="display:none;">
+              <a class="nav-item" onclick="showPanel('the-business-professional')">&#128188; The Business Professional</a>
+              <a class="nav-item" onclick="showPanel('beach---island-holiday')">&#127754; Beach & Island Holiday</a>
+              <a class="nav-item" onclick="showPanel('family-vacation')">&#128106; Family Vacation</a>
+              <a class="nav-item" onclick="showPanel('the-backpacker---explorer')">&#127939; The Backpacker / Explorer</a>
+              <a class="nav-item" onclick="showPanel('the-influencer---content-creator')">&#128248; The Influencer / Content Creator</a>
+              <a class="nav-item" onclick="showPanel('the-senior-traveller')">&#128116; The Senior Traveller</a>
+              <a class="nav-item" onclick="showPanel('the-student--overseas-exchange-')">&#127891; The Student (Overseas Exchange)</a>
+            </div>
+            <div class="nav-cat" onclick="toggleCat(this)">🎬 Travel Expos <span class="cat-arrow">▶</span></div>
+            <div class="nav-items" style="display:none;">
+              <a class="nav-item" onclick="showPanel('singapore-travel-expos---exhibitions')">&#127915; Singapore Travel Expos & Exhibitions</a>
+              <a class="nav-item" onclick="showPanel('best-time-to-buy-luggage-in-singapore')">&#128197; Best Time to Buy Luggage in Singapore</a>
+              <a class="nav-item" onclick="showPanel('singapore-school-holiday-calendar---plan')">&#128506; Singapore School Holiday Calendar — Plan Your Trips</a>
+            </div>    </div>
+
+        <!-- CONTENT AREA -->
+    <div class="content">
+        <div style="margin-bottom:20px;">
+            <h1 style="font-size:1.5rem;font-weight:800;color:var(--white);margin-bottom:4px;">Your Travel Companion</h1>
+            <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);">34 guides — click to expand. Country guides, luggage tips, packing lists, and more.</p>
+        </div>
+
+        <!-- Category tabs -->
+        <div style="display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap;">
+            <button class="tip-tab active" onclick="showTipCat('countries')">&#127758; Country Guides</button>
+            <button class="tip-tab" onclick="showTipCat('luggage')">&#129523; Luggage Tips</button>
+            <button class="tip-tab" onclick="showTipCat('packing')">&#127890; Packing Lists</button>
+            <button class="tip-tab" onclick="showTipCat('insurance')">&#128737;&#65039; Travel Insurance</button>
+            <button class="tip-tab" onclick="showTipCat('recommend')">&#127890; Luggage Recommender</button>
+            <button class="tip-tab" onclick="showTipCat('events')">&#127915; Travel Expos & Events</button>
+        </div>
+
+<div id="cat-countries" class="tip-category">
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#127471;&#127477; Japan Travel Guide 2026 <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                        <div>
+                            <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Emergency Numbers</h4>
+                            <table style="width:100%;font-size:0.78rem;border-collapse:collapse;">
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">Police</td><td style="color:var(--white);">110</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">Ambulance / Fire</td><td style="color:var(--white);">119</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">SG Embassy Tokyo</td><td style="color:var(--white);">+81-3-3586-9111</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">Tourist Helpline</td><td style="color:var(--white);">050-3816-2787</td></tr>
+                            </table>
+                        </div>
+                        <div>
+                            <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Luggage Tips for Japan</h4>
+                            <ul style="font-size:0.78rem;color:rgba(255,255,255,0.7);padding-left:16px;display:flex;flex-direction:column;gap:4px;">
+                                <li>Cabin size (20") fits overhead on Shinkansen</li>
+                                <li>Use luggage forwarding (Takkyubin) — send bags hotel-to-hotel for ~$15</li>
+                                <li>Coin lockers at every station (300-700 yen)</li>
+                                <li>Hard-case recommended — lots of escalators, smooth floors</li>
+                                <li>TSA lock not required (Japan doesn't inspect)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.08);">
+                        <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:6px;">Packing Essentials</h4>
+                        <div style="display:flex;gap:6px;flex-wrap:wrap;font-size:0.72rem;">
+                            <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Passport</span>
+                            <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Travel adaptor (Type A)</span>
+                            <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Suica/Pasmo card</span>
+                            <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Pocket WiFi</span>
+                            <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Cash (Japan is cash-heavy)</span>
+                            <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Comfortable walking shoes</span>
+                            <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Foldable bag for shopping</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#127472;&#127479; Korea Travel Guide 2026 <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                        <div>
+                            <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Emergency Numbers</h4>
+                            <table style="width:100%;font-size:0.78rem;border-collapse:collapse;">
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">Police</td><td style="color:var(--white);">112</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">Ambulance / Fire</td><td style="color:var(--white);">119</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">SG Embassy Seoul</td><td style="color:var(--white);">+82-2-774-2464</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">Tourist Helpline</td><td style="color:var(--white);">1330</td></tr>
+                            </table>
+                        </div>
+                        <div>
+                            <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Luggage Tips for Korea</h4>
+                            <ul style="font-size:0.78rem;color:rgba(255,255,255,0.7);padding-left:16px;display:flex;flex-direction:column;gap:4px;">
+                                <li>Subway has luggage racks — 24" fits fine</li>
+                                <li>Airport luggage storage at Incheon (KRW 5,000-15,000/day)</li>
+                                <li>Winter trips: pack light, buy padded jackets cheap in Myeongdong</li>
+                                <li>Soft-case better for shopping hauls (expandable!)</li>
+                                <li>K-beauty products are heavy — leave luggage space</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#127466;&#127482; Europe Travel Guide — Multi-City Tips <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                        <div>
+                            <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Emergency Numbers (Universal)</h4>
+                            <table style="width:100%;font-size:0.78rem;border-collapse:collapse;">
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">EU Emergency</td><td style="color:var(--white);">112 (all countries)</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">UK Emergency</td><td style="color:var(--white);">999</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">SG Embassy London</td><td style="color:var(--white);">+44-20-7235-8315</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">SG Embassy Paris</td><td style="color:var(--white);">+33-1-4500-3361</td></tr>
+                            </table>
+                        </div>
+                        <div>
+                            <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Luggage Tips for Europe</h4>
+                            <ul style="font-size:0.78rem;color:rgba(255,255,255,0.7);padding-left:16px;display:flex;flex-direction:column;gap:4px;">
+                                <li>Cobblestones everywhere — get 4-wheel spinner, NOT 2-wheel</li>
+                                <li>Budget airlines (Ryanair, EasyJet) have strict cabin size — measure!</li>
+                                <li>Train travel: overhead racks fit 20" only, store 24"+ near doors</li>
+                                <li>Anti-theft: use TSA lock, keep valuables in carry-on</li>
+                                <li>Bring an empty foldable bag for the return shopping haul</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#127481;&#127469; Thailand Travel Guide 2026 <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                        <div>
+                            <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Emergency Numbers</h4>
+                            <table style="width:100%;font-size:0.78rem;border-collapse:collapse;">
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">Police</td><td style="color:var(--white);">191</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">Tourist Police</td><td style="color:var(--white);">1155</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">Ambulance</td><td style="color:var(--white);">1669</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">SG Embassy Bangkok</td><td style="color:var(--white);">+66-2-286-2111</td></tr>
+                            </table>
+                        </div>
+                        <div>
+                            <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Luggage Tips for Thailand</h4>
+                            <ul style="font-size:0.78rem;color:rgba(255,255,255,0.7);padding-left:16px;display:flex;flex-direction:column;gap:4px;">
+                                <li>Soft-case recommended — easier for tuk-tuks and boats</li>
+                                <li>Waterproof bag essential for island hopping</li>
+                                <li>Pack light — cheap laundry everywhere (40-60 baht/kg)</li>
+                                <li>Leave space for Chatuchak market shopping!</li>
+                                <li>Duffel bag great for Chiang Mai/Pai adventures</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#127482;&#127480; USA Travel Guide 2026 <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                        <div>
+                            <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Emergency Numbers</h4>
+                            <table style="width:100%;font-size:0.78rem;border-collapse:collapse;">
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">Emergency (all)</td><td style="color:var(--white);">911</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">SG Embassy Washington</td><td style="color:var(--white);">+1-202-537-3100</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">SG Consulate NY</td><td style="color:var(--white);">+1-212-223-3331</td></tr>
+                            </table>
+                        </div>
+                        <div>
+                            <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Luggage Tips for USA</h4>
+                            <ul style="font-size:0.78rem;color:rgba(255,255,255,0.7);padding-left:16px;display:flex;flex-direction:column;gap:4px;">
+                                <li>TSA lock MANDATORY — TSA will cut non-TSA locks</li>
+                                <li>Checked bag weight limit: 23kg (50lbs) most airlines</li>
+                                <li>Domestic flights: carry-on only saves $30-60 per flight</li>
+                                <li>Hard-case protects against rough baggage handling</li>
+                                <li>Outlets are 110V Type A/B — bring travel adaptor</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#127462;&#127482; Australia Travel Guide 2026 <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                        <div>
+                            <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Emergency Numbers</h4>
+                            <table style="width:100%;font-size:0.78rem;border-collapse:collapse;">
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">Emergency (all)</td><td style="color:var(--white);">000</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">SG High Comm Canberra</td><td style="color:var(--white);">+61-2-6271-2000</td></tr>
+                            </table>
+                        </div>
+                        <div>
+                            <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Luggage Tips</h4>
+                            <ul style="font-size:0.78rem;color:rgba(255,255,255,0.7);padding-left:16px;display:flex;flex-direction:column;gap:4px;">
+                                <li>Strict biosecurity — declare ALL food, no fresh produce</li>
+                                <li>Domestic flights (Jetstar, Virgin): strict 7kg carry-on</li>
+                                <li>Road trips common — soft duffel easier for car boots</li>
+                                <li>Sunscreen + hat essential — pack in checked bag (liquid limit)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#127483;&#127475; Vietnam Travel Guide 2026 <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                        <div>
+                            <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Emergency Numbers</h4>
+                            <table style="width:100%;font-size:0.78rem;border-collapse:collapse;">
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">Police</td><td style="color:var(--white);">113</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">Ambulance</td><td style="color:var(--white);">115</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">SG Embassy Hanoi</td><td style="color:var(--white);">+84-24-3823-8228</td></tr>
+                            </table>
+                        </div>
+                        <div>
+                            <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Luggage Tips</h4>
+                            <ul style="font-size:0.78rem;color:rgba(255,255,255,0.7);padding-left:16px;display:flex;flex-direction:column;gap:4px;">
+                                <li>Motorbike taxis — small backpack/sling bag only</li>
+                                <li>Overnight buses (Hanoi→Sapa): cabin size trolley max</li>
+                                <li>Ha Long Bay boats: soft bags only, no hard-case</li>
+                                <li>Leave space — Vietnamese coffee, handicrafts are great souvenirs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#127470;&#127465; Indonesia (Bali) Travel Guide 2026 <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                        <div>
+                            <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Emergency Numbers</h4>
+                            <table style="width:100%;font-size:0.78rem;border-collapse:collapse;">
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">Emergency</td><td style="color:var(--white);">112</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">Tourist Police Bali</td><td style="color:var(--white);">+62-361-224-111</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">SG Embassy Jakarta</td><td style="color:var(--white);">+62-21-2995-0400</td></tr>
+                            </table>
+                        </div>
+                        <div>
+                            <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Luggage Tips</h4>
+                            <ul style="font-size:0.78rem;color:rgba(255,255,255,0.7);padding-left:16px;display:flex;flex-direction:column;gap:4px;">
+                                <li>Bali roads are bumpy — soft-case or backpack preferred</li>
+                                <li>Waterproof dry bag essential for beach/island hopping</li>
+                                <li>Scooter rentals common — duffel bag straps on easier</li>
+                                <li>Pack light, buy sarongs and clothes locally (cheap!)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#127475;&#127487; New Zealand Adventure Guide 2026 <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                        <div>
+                            <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Emergency Numbers</h4>
+                            <table style="width:100%;font-size:0.78rem;border-collapse:collapse;">
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">Emergency</td><td style="color:var(--white);">111</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">SG High Comm Wellington</td><td style="color:var(--white);">+64-4-470-0850</td></tr>
+                            </table>
+                        </div>
+                        <div>
+                            <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Luggage Tips for Adventure</h4>
+                            <ul style="font-size:0.78rem;color:rgba(255,255,255,0.7);padding-left:16px;display:flex;flex-direction:column;gap:4px;">
+                                <li>Hiking backpack (50-65L) for Milford Track, Routeburn</li>
+                                <li>Campervan trips: soft duffel fits better than hard-case</li>
+                                <li>Layered packing — NZ weather changes 4 times a day</li>
+                                <li>Strict biosecurity — clean hiking boots before arrival</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#9968;&#65039; Hiking & Trekking — What Bag to Bring <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Bag Guide by Trek Type</h4>
+                    <table style="width:100%;font-size:0.78rem;border-collapse:collapse;">
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:rgba(255,255,255,0.5);">Day hike (4-8 hrs)</td><td style="color:var(--white);">20-30L backpack with water bladder</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:rgba(255,255,255,0.5);">Multi-day (2-4 days)</td><td style="color:var(--white);">40-50L with rain cover, hip belt essential</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:rgba(255,255,255,0.5);">Expedition (5+ days)</td><td style="color:var(--white);">60-75L with frame, top-loading</td></tr>
+                        <tr><td style="padding:6px 0;color:rgba(255,255,255,0.5);">Base camp (fly in, trek out)</td><td style="color:var(--white);">Duffel bag + small day pack combo</td></tr>
+                    </table>
+                    <h4 style="color:var(--gold);font-size:0.85rem;margin:12px 0 8px;">Popular Hiking Destinations</h4>
+                    <div style="display:flex;gap:6px;flex-wrap:wrap;font-size:0.72rem;">
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Mt Kinabalu, Malaysia</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Mt Rinjani, Lombok</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Everest Base Camp, Nepal</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Milford Track, NZ</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Torres del Paine, Chile</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Kumano Kodo, Japan</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Camino de Santiago, Spain</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Annapurna Circuit, Nepal</span>
+                    </div>
+                    <p style="font-size:0.78rem;color:var(--gold);margin-top:10px;">We carry hiking backpacks, duffel bags, and day packs — visit our Yishun showroom to try before you buy.</p>
+                </div>
+            </div>
+
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#127960;&#65039; Cruise Travel — What to Pack & Know <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <ul style="font-size:0.78rem;color:rgba(255,255,255,0.7);padding-left:16px;display:flex;flex-direction:column;gap:4px;">
+                        <li><strong style="color:var(--white);">No luggage weight limit!</strong> Cruise ships don't weigh your bags — pack freely</li>
+                        <li>Bring a small day bag/backpack for port excursions</li>
+                        <li>Hard-case recommended — porters stack luggage, soft bags get crushed</li>
+                        <li>Pack formal wear for gala nights (1-2 per week)</li>
+                        <li>Bring magnetic hooks — cruise cabin walls are metal, hang bags/hats</li>
+                        <li>Carry-on essentials: swimsuit, sunscreen, medication — luggage arrives hours later</li>
+                        <li>Power adaptor: ships use US-style outlets (Type A/B)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#127474;&#127486; Malaysia Weekend Getaway — JB, KL, Penang <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                        <div>
+                            <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Emergency Numbers</h4>
+                            <table style="width:100%;font-size:0.78rem;border-collapse:collapse;">
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">Emergency</td><td style="color:var(--white);">999</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">Tourist Police</td><td style="color:var(--white);">03-2149-6590</td></tr>
+                                <tr><td style="padding:4px 0;color:rgba(255,255,255,0.5);">SG High Comm KL</td><td style="color:var(--white);">+60-3-2161-6277</td></tr>
+                            </table>
+                        </div>
+                        <div>
+                            <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Luggage Tips</h4>
+                            <ul style="font-size:0.78rem;color:rgba(255,255,255,0.7);padding-left:16px;display:flex;flex-direction:column;gap:4px;">
+                                <li>JB day trip: just a backpack or sling bag</li>
+                                <li>KL weekend: cabin size trolley is perfect</li>
+                                <li>Bus to KL/Penang: cabin trolley fits overhead</li>
+                                <li>Leave space — Malaysian snacks and kopi are a must-buy!</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#127474;&#127483; Maldives & Beach Resort Guide <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <ul style="font-size:0.78rem;color:rgba(255,255,255,0.7);padding-left:16px;display:flex;flex-direction:column;gap:4px;">
+                        <li>Seaplane transfers: strict 20kg limit + 1 carry-on — pack LIGHT</li>
+                        <li>Soft-case only for seaplanes — hard-case won't fit</li>
+                        <li>Waterproof dry bag essential — speedboat transfers splash</li>
+                        <li>Pack reef-safe sunscreen (many resorts require it)</li>
+                        <li>Snorkelling gear: bring your own mask — resort rentals are $20+/day</li>
+                        <li>Dressing modest outside resort — bring light cover-ups for Male city</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- LUGGAGE TIPS -->
+        <div id="cat-luggage" class="tip-category" style="display:none;">
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#128274; TSA Lock Stuck? How to Reset <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <ol style="font-size:0.8rem;color:rgba(255,255,255,0.7);padding-left:18px;display:flex;flex-direction:column;gap:6px;">
+                        <li>Set the lock to the current combination (or 000 if new)</li>
+                        <li>Push the reset button with a pen (small hole on the side/bottom)</li>
+                        <li>While holding the button, set your new 3-digit code</li>
+                        <li>Release the button — new code is set</li>
+                        <li>Test 3 times before locking your luggage!</li>
+                    </ol>
+                    <p style="font-size:0.78rem;color:var(--gold);margin-top:10px;">Still stuck? Bring it to our Yishun showroom — we'll help you reset it for free.</p>
+                </div>
+            </div>
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#128296; Broken Luggage Wheel — How to Fix <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <ul style="font-size:0.8rem;color:rgba(255,255,255,0.7);padding-left:18px;display:flex;flex-direction:column;gap:6px;">
+                        <li><strong style="color:var(--white);">Spinner wheel loose:</strong> Tighten the hex bolt at the base with an Allen key</li>
+                        <li><strong style="color:var(--white);">Wheel won't spin:</strong> Remove hair/debris wrapped around the axle</li>
+                        <li><strong style="color:var(--white);">Wheel broken off:</strong> Replacement wheels available at our showroom ($5-15/wheel)</li>
+                        <li><strong style="color:var(--white);">Cracked housing:</strong> If the wheel housing is cracked, the entire caster needs replacing</li>
+                    </ul>
+                    <p style="font-size:0.78rem;color:var(--gold);margin-top:10px;">We offer luggage repair services — WhatsApp us a photo for a quick quote.</p>
+                </div>
+            </div>
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#128230; Airline Damaged Your Luggage? How to Claim <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <ol style="font-size:0.8rem;color:rgba(255,255,255,0.7);padding-left:18px;display:flex;flex-direction:column;gap:6px;">
+                        <li>Report damage IMMEDIATELY at the airline baggage counter (before leaving airport)</li>
+                        <li>Get a PIR (Property Irregularity Report) — this is your claim document</li>
+                        <li>Take photos of all damage + your luggage tag</li>
+                        <li>File a formal claim with the airline within 7 days (21 days for delayed bags)</li>
+                        <li>Airlines typically cover repair or replacement up to ~$1,500 USD</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#128271; Luggage Zipper Stuck — Quick Fixes <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <ul style="font-size:0.8rem;color:rgba(255,255,255,0.7);padding-left:18px;display:flex;flex-direction:column;gap:6px;">
+                        <li><strong style="color:var(--white);">Fabric caught:</strong> Gently pull fabric away while slowly moving the zipper back</li>
+                        <li><strong style="color:var(--white);">Zipper won't close:</strong> Run a pencil (graphite) along both sides as lubricant</li>
+                        <li><strong style="color:var(--white);">Slider loose:</strong> Gently squeeze the slider with pliers to tighten</li>
+                        <li><strong style="color:var(--white);">Teeth misaligned:</strong> Use a fork to realign the teeth, then re-zip slowly</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- PACKING LISTS -->
+        <div id="cat-packing" class="tip-category" style="display:none;">
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#128188; Business Trip — 3 Days, 1 Cabin Bag <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <div style="display:flex;gap:6px;flex-wrap:wrap;font-size:0.75rem;">
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">2 shirts (wrinkle-free)</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">1 blazer (wear on plane)</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">2 trousers</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Laptop + charger</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Business cards</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Toiletry pouch (&lt;100ml)</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Universal adaptor</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Dress shoes (wear them)</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Powerbank</span>
+                    </div>
+                    <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:10px;">Recommended: Our laptop trolley backpack — fits overhead, holds laptop + 3 days of clothes.</p>
+                </div>
+            </div>
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#128106; Family Holiday — Packing for Kids <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <div style="display:flex;gap:6px;flex-wrap:wrap;font-size:0.75rem;">
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Kids' own small trolley (they love it!)</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Snacks for the plane</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">iPad + headphones</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Change of clothes in carry-on</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Wet wipes (lots)</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Favourite toy/blanket</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Medicine kit</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Packing cubes (1 per kid)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#128116; Travelling with Elderly Parents — What to Know <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Luggage Choice</h4>
+                    <ul style="font-size:0.78rem;color:rgba(255,255,255,0.7);padding-left:16px;display:flex;flex-direction:column;gap:4px;">
+                        <li><strong style="color:var(--white);">Lightweight:</strong> Choose bags under 3kg empty — every gram counts for seniors</li>
+                        <li><strong style="color:var(--white);">4-wheel spinner:</strong> Much easier to maneuver than 2-wheel — no pulling force needed</li>
+                        <li><strong style="color:var(--white);">Bright colour:</strong> Easy to spot on carousel — saves standing and searching</li>
+                        <li><strong style="color:var(--white);">20" cabin size:</strong> Avoid checked luggage queues — less waiting, less walking</li>
+                    </ul>
+                    <h4 style="color:var(--gold);font-size:0.85rem;margin:12px 0 8px;">Essential Tips</h4>
+                    <ul style="font-size:0.78rem;color:rgba(255,255,255,0.7);padding-left:16px;display:flex;flex-direction:column;gap:4px;">
+                        <li>Request wheelchair assistance at airport — free and saves energy for the trip</li>
+                        <li>Pack ALL medications in carry-on with doctor's letter</li>
+                        <li>Book aisle seats for easy bathroom access</li>
+                        <li>Compression socks for flights over 4 hours (DVT prevention)</li>
+                        <li>Travel insurance MUST cover pre-existing conditions — read the fine print!</li>
+                        <li>Print hotel addresses in local language (for taxi drivers)</li>
+                        <li>Choose hotels with lifts — avoid walk-up boutique hotels</li>
+                        <li>Plan rest days — don't pack the itinerary too tight</li>
+                    </ul>
+                    <p style="font-size:0.78rem;color:var(--gold);margin-top:10px;">Our lightweight softside luggage (from $49) is perfect for seniors — under 2.8kg with smooth-rolling wheels.</p>
+                </div>
+            </div>
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#128118; Travelling with Young Kids — Survival Guide <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Luggage Setup</h4>
+                    <ul style="font-size:0.78rem;color:rgba(255,255,255,0.7);padding-left:16px;display:flex;flex-direction:column;gap:4px;">
+                        <li><strong style="color:var(--white);">Give kids their own bag:</strong> A small trolley they can pull — builds excitement and responsibility</li>
+                        <li><strong style="color:var(--white);">Hard-case:</strong> Kids sit on them at airports, protects fragile souvenirs</li>
+                        <li><strong style="color:var(--white);">Expandable:</strong> You WILL buy things — leave expansion room</li>
+                        <li><strong style="color:var(--white);">Bright/fun colours:</strong> Kids spot their own bag, less chance of losing it</li>
+                    </ul>
+                    <h4 style="color:var(--gold);font-size:0.85rem;margin:12px 0 8px;">Carry-On Must-Haves</h4>
+                    <div style="display:flex;gap:6px;flex-wrap:wrap;font-size:0.72rem;">
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Snacks (lots!)</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">iPad + headphones</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Change of clothes</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Wet wipes</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Favourite toy</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Children's Panadol</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Ziplock bags</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Stroller rain cover</span>
+                    </div>
+                    <h4 style="color:var(--gold);font-size:0.85rem;margin:12px 0 8px;">Pro Tips</h4>
+                    <ul style="font-size:0.78rem;color:rgba(255,255,255,0.7);padding-left:16px;display:flex;flex-direction:column;gap:4px;">
+                        <li>Book early morning flights — kids sleep on the plane</li>
+                        <li>Use packing cubes — 1 cube per kid per day = no digging</li>
+                        <li>Stroller: gate-check for free on most airlines</li>
+                        <li>Bring an empty water bottle — fill after security</li>
+                        <li>Hotel with laundry saves 50% luggage space — pack 3 days, wash, repeat</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#127956;&#65039; Backpacking SEA — What to Pack Light <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <div style="display:flex;gap:6px;flex-wrap:wrap;font-size:0.75rem;">
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">40L backpack (NOT suitcase)</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">3 quick-dry shirts</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">2 shorts</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Flip flops + 1 sneaker</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Rain poncho</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Dry bag for electronics</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Mosquito repellent</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Microfiber towel</span>
+                        <span style="background:rgba(200,164,94,0.15);color:var(--gold);padding:3px 10px;border-radius:4px;">Padlock for hostels</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRAVEL INSURANCE -->
+        <div id="cat-insurance" class="tip-category" style="display:none;">
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#128737;&#65039; Best Travel Insurance Singapore 2026 — What to Look For <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Key Coverage to Check</h4>
+                    <table style="width:100%;font-size:0.78rem;border-collapse:collapse;">
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:rgba(255,255,255,0.5);">Medical</td><td style="color:var(--white);">Min $200,000 (USA/Europe needs $500K+)</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:rgba(255,255,255,0.5);">Trip cancellation</td><td style="color:var(--white);">Should cover your full trip cost</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:rgba(255,255,255,0.5);">Luggage loss/delay</td><td style="color:var(--white);">$3,000-5,000 per person</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:rgba(255,255,255,0.5);">Flight delay</td><td style="color:var(--white);">$100-200 per 6 hours</td></tr>
+                        <tr><td style="padding:6px 0;color:rgba(255,255,255,0.5);">Personal liability</td><td style="color:var(--white);">$500,000 minimum</td></tr>
+                    </table>
+                    <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:10px;">Popular SG insurers: NTUC Income, AXA, Allianz, FWD, Singlife. Compare at MoneySmart or GoBear.</p>
+                </div>
+            </div>
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#128176; Luggage Lost by Airline — Insurance Claim Steps <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <ol style="font-size:0.8rem;color:rgba(255,255,255,0.7);padding-left:18px;display:flex;flex-direction:column;gap:6px;">
+                        <li>File PIR at airport baggage counter (get reference number)</li>
+                        <li>Keep ALL receipts for emergency purchases (clothes, toiletries)</li>
+                        <li>Notify your travel insurer within 24 hours</li>
+                        <li>If bag not found in 21 days, airline declares it lost</li>
+                        <li>Claim from BOTH airline + travel insurance (airline first, insurer covers the gap)</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- LUGGAGE RECOMMENDER by persona/holiday type -->
+        <div id="cat-recommend" class="tip-category" style="display:none;">
+            <div class="tip-panel open" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#128188; The Business Professional <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <table style="width:100%;font-size:0.8rem;border-collapse:collapse;">
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Recommended</td><td style="color:var(--white);">Laptop trolley backpack (cabin size)</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Size</td><td style="color:var(--white);">20" cabin — avoid checked bags, save time</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Type</td><td style="color:var(--white);">Hard-case (protects laptop) or hybrid</td></tr>
+                        <tr><td style="padding:6px 0;color:var(--gold);font-weight:600;">Colour</td><td style="color:var(--white);">Black, navy, or charcoal — boardroom-ready</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#127754; Beach & Island Holiday <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <table style="width:100%;font-size:0.8rem;border-collapse:collapse;">
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Recommended</td><td style="color:var(--white);">Soft-case trolley + waterproof day bag</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Size</td><td style="color:var(--white);">24" expandable — room for beach shopping</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Must-have</td><td style="color:var(--white);">Dry bag for phone/wallet on boats</td></tr>
+                        <tr><td style="padding:6px 0;color:var(--gold);font-weight:600;">Colour</td><td style="color:var(--white);">Bright/fun — easy to spot, holiday vibes!</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#128106; Family Vacation <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <table style="width:100%;font-size:0.8rem;border-collapse:collapse;">
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Recommended</td><td style="color:var(--white);">28" checked + 20" cabin + kids' trolley</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Type</td><td style="color:var(--white);">Hard-case — kids sit on them at airports!</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Pro tip</td><td style="color:var(--white);">Matching set — never lose track of your family's bags</td></tr>
+                        <tr><td style="padding:6px 0;color:var(--gold);font-weight:600;">Extras</td><td style="color:var(--white);">Packing cubes (1 per family member) + foldable bag</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#127939; The Backpacker / Explorer <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <table style="width:100%;font-size:0.8rem;border-collapse:collapse;">
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Recommended</td><td style="color:var(--white);">40-50L hiking backpack with rain cover</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Avoid</td><td style="color:var(--white);">Hard-case trolley — useless on trails, tuk-tuks, boats</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Must-have</td><td style="color:var(--white);">Day pack (20L) for excursions from hostel</td></tr>
+                        <tr><td style="padding:6px 0;color:var(--gold);font-weight:600;">Lock</td><td style="color:var(--white);">Padlock for hostel lockers — bring your own</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#128248; The Influencer / Content Creator <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <table style="width:100%;font-size:0.8rem;border-collapse:collapse;">
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Recommended</td><td style="color:var(--white);">Instagrammable hard-case (pastel/metallic) + camera backpack</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Photo tip</td><td style="color:var(--white);">Bright coloured luggage = better content against landmarks</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Protect gear</td><td style="color:var(--white);">Hard-case for camera equipment — padded dividers inside</td></tr>
+                        <tr><td style="padding:6px 0;color:var(--gold);font-weight:600;">Size</td><td style="color:var(--white);">20" cabin — no waiting at carousel = more shooting time</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#128116; The Senior Traveller <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <table style="width:100%;font-size:0.8rem;border-collapse:collapse;">
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Recommended</td><td style="color:var(--white);">Ultra-lightweight softside (&lt;3kg) with 4-wheel spinner</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Size</td><td style="color:var(--white);">20" cabin — avoid heavy lifting at carousel</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Handle</td><td style="color:var(--white);">Telescopic at comfortable height — test before buying</td></tr>
+                        <tr><td style="padding:6px 0;color:var(--gold);font-weight:600;">Colour</td><td style="color:var(--white);">Bright — easy to spot, prevents mix-ups</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#127891; The Student (Overseas Exchange) <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <table style="width:100%;font-size:0.8rem;border-collapse:collapse;">
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Recommended</td><td style="color:var(--white);">28" expandable checked + laptop backpack</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Why 28"</td><td style="color:var(--white);">You're packing for months, not days</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Budget</td><td style="color:var(--white);">Durable but affordable — our softside from $59</td></tr>
+                        <tr><td style="padding:6px 0;color:var(--gold);font-weight:600;">Extras</td><td style="color:var(--white);">Vacuum bags to compress clothes — doubles the space</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRAVEL EXPOS & EVENTS (evergreen, not year-locked) -->
+        <div id="cat-events" class="tip-category" style="display:none;">
+            <div class="tip-panel open" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#127915; Singapore Travel Expos & Exhibitions <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <h4 style="color:var(--gold);font-size:0.85rem;margin-bottom:8px;">Annual Travel Events in Singapore</h4>
+                    <table style="width:100%;font-size:0.78rem;border-collapse:collapse;">
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">NATAS Travel Fair</td><td style="color:rgba(255,255,255,0.7);">Feb/Mar & Aug/Sep — Singapore Expo. Biggest travel deals</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Travel Revolution</td><td style="color:rgba(255,255,255,0.7);">Multiple times/year — online + physical. Package deals</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">ITB Asia</td><td style="color:rgba(255,255,255,0.7);">Oct — Marina Bay Sands. B2B travel industry conference</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Changi Travel Carnival</td><td style="color:rgba(255,255,255,0.7);">Various dates — Changi Airport. Airline + hotel deals</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">MATTA Fair (Malaysia)</td><td style="color:rgba(255,255,255,0.7);">Mar & Sep — MITEC KL. Worth the trip from SG for deals</td></tr>
+                        <tr><td style="padding:6px 0;color:var(--gold);font-weight:600;">Outdoor Adventure Fair</td><td style="color:rgba(255,255,255,0.7);">Annual — gear, hiking, diving, camping equipment expo</td></tr>
+                    </table>
+                    <p style="font-size:0.78rem;color:var(--gold);margin-top:12px;">Pro tip: Buy your luggage BEFORE the travel expo — you'll need it for the trip you just booked! Visit our Yishun showroom or shop online at luggageoutlet.sg</p>
+                </div>
+            </div>
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#128197; Best Time to Buy Luggage in Singapore <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <table style="width:100%;font-size:0.78rem;border-collapse:collapse;">
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Jan-Feb</td><td style="color:rgba(255,255,255,0.7);">CNY clearance + pre-March school holiday rush</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">May-Jun</td><td style="color:rgba(255,255,255,0.7);">GSS (Great Singapore Sale) — discounts across retail</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Sep</td><td style="color:rgba(255,255,255,0.7);">Post-NATAS — shops clear stock after fair season</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">Nov</td><td style="color:rgba(255,255,255,0.7);">11.11 + Black Friday — online deals at luggageoutlet.sg</td></tr>
+                        <tr><td style="padding:6px 0;color:var(--gold);font-weight:600;">Anytime</td><td style="color:rgba(255,255,255,0.7);">We offer wholesale pricing every day — no need to wait for sales!</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="tip-panel" onclick="this.classList.toggle('open')">
+                <div class="tip-header">&#128506; Singapore School Holiday Calendar — Plan Your Trips <span class="tip-toggle">+</span></div>
+                <div class="tip-body">
+                    <table style="width:100%;font-size:0.78rem;border-collapse:collapse;">
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">March</td><td style="color:rgba(255,255,255,0.7);">1 week — short getaways: JB, Batam, Bintan, KL</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">June</td><td style="color:rgba(255,255,255,0.7);">4 weeks — peak travel season. Book flights early, buy luggage early!</td></tr>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:6px 0;color:var(--gold);font-weight:600;">September</td><td style="color:rgba(255,255,255,0.7);">1 week — short trips. Shoulder season = cheaper flights</td></tr>
+                        <tr><td style="padding:6px 0;color:var(--gold);font-weight:600;">Nov-Dec</td><td style="color:rgba(255,255,255,0.7);">6 weeks — biggest travel window. Japan winter, Europe Christmas markets</td></tr>
+                    </table>
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+<style>
+    .tip-tab{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.6);padding:6px 14px;border-radius:6px;font-size:0.75rem;font-weight:600;cursor:pointer;transition:all 0.2s;}
+    .tip-tab:hover{border-color:var(--gold);color:var(--gold);}
+    .tip-tab.active{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+    .tip-panel{border:1px solid rgba(255,255,255,0.08);border-radius:8px;margin-bottom:6px;overflow:hidden;transition:all 0.2s;}
+    .tip-panel:hover{border-color:rgba(200,164,94,0.3);}
+    .tip-header{padding:10px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:0.82rem;color:rgba(255,255,255,0.85);}
+    .tip-body{padding:0 14px 12px;display:none;}
+    .tip-panel.open .tip-body{display:block;}
+    .tip-panel.open{border-color:var(--gold);background:rgba(200,164,94,0.04);}
+    .tip-toggle{color:rgba(255,255,255,0.3);font-size:1rem;transition:transform 0.2s;}
+    .tip-panel.open .tip-toggle{transform:rotate(45deg);color:var(--gold);}
+</style>
+
+<script>
+function showTipCat(cat){
+    document.querySelectorAll('.tip-category').forEach(c=>c.style.display='none');
+    document.getElementById('cat-'+cat).style.display='block';
+    document.querySelectorAll('.tip-tab').forEach(t=>t.classList.remove('active'));
+    event.target.classList.add('active');
+}
+function toggleCat(el){
+    el.classList.toggle('open');
+    var items=el.nextElementSibling;
+    items.style.display=items.style.display==='none'?'block':'none';
+}
+function showPanel(id){
+    // Find which category this panel is in and show that tab
+    var panel = document.querySelector('[onclick*="'+id+'"]');
+    if(panel){
+        var cat = panel.closest('.tip-category');
+        if(cat){
+            document.querySelectorAll('.tip-category').forEach(c=>c.style.display='none');
+            cat.style.display='block';
+        }
+        // Open the panel
+        var tipPanel = null;
+        document.querySelectorAll('.tip-header').forEach(h=>{
+            if(h.textContent.toLowerCase().includes(id.split('-')[0])){
+                tipPanel = h.parentElement;
+            }
+        });
+        if(tipPanel){
+            tipPanel.classList.add('open');
+            tipPanel.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+    }
+    document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+    event.target.classList.add('active');
+}
+function searchGuides(query){
+    query=query.toLowerCase();
+    document.querySelectorAll('.nav-item').forEach(item=>{
+        item.style.display=item.textContent.toLowerCase().includes(query)?'block':'none';
+    });
+    if(query.length>0){
+        document.querySelectorAll('.nav-items').forEach(n=>n.style.display='block');
+        document.querySelectorAll('.nav-cat').forEach(c=>c.classList.add('open'));
+    }
+}
+</script>
+</body>
+</html>

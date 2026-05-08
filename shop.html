@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop — Luggage Outlet Singapore | Luggage, Bags & Travel Accessories at Wholesale Prices</title>
+    <meta name="description" content="Shop luggage, bags, and travel accessories at wholesale prices. Softside & hardcase suitcases from $25.90, backpacks, waist pouches, TSA locks, luggage straps. Luggage Outlet Singapore, est. 1979.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root{--navy:#022461;--navy-dark:#011638;--gold:#c8a45e;--white:#fff;--off-white:#f7f6f3;--gray-100:#e5e7eb;--gray-500:#6b7280;}
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'Inter',sans-serif;background:var(--navy-dark);color:var(--white);}
+        .top-nav{background:rgba(1,22,56,0.95);backdrop-filter:blur(12px);padding:12px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;z-index:100;}
+        .logo{text-decoration:none;color:var(--white);}
+        .logo-main{font-size:1.1rem;font-weight:800;letter-spacing:2px;}
+        .logo-sub{font-size:0.55rem;color:var(--gold);letter-spacing:3px;text-transform:uppercase;}
+        .top-links{display:flex;gap:20px;align-items:center;}
+        .top-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.8rem;font-weight:500;}
+        .top-links a:hover{color:var(--white);}
+        .top-links .cta{background:var(--gold);color:var(--navy);padding:7px 16px;border-radius:5px;font-weight:700;}
+        .container{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+        /* HERO */
+        .shop-hero{padding:48px 0 24px;text-align:center;border-bottom:1px solid rgba(255,255,255,0.06);}
+        .shop-hero h1{font-size:1.8rem;font-weight:900;margin-bottom:6px;}
+        .shop-hero h1 span{color:var(--gold);}
+        .shop-hero p{color:rgba(255,255,255,0.5);font-size:0.9rem;}
+
+        /* CATEGORY TABS */
+        .cat-tabs{display:flex;justify-content:center;gap:8px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
+        .cat-tab{padding:10px 24px;border:1px solid rgba(255,255,255,0.12);border-radius:8px;background:transparent;color:rgba(255,255,255,0.6);font-size:0.85rem;font-weight:600;cursor:pointer;transition:all 0.2s;}
+        .cat-tab:hover{border-color:var(--gold);color:var(--gold);}
+        .cat-tab.active{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+
+        /* PRODUCT GRID */
+        .product-section{padding:24px 0;display:none;}
+        .product-section.active{display:block;}
+        .product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+        @media(max-width:768px){.product-grid{grid-template-columns:repeat(2,1fr);}}
+        .product-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;overflow:hidden;transition:all 0.2s;}
+        .product-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.2);}
+        .product-img{width:100%;height:180px;object-fit:cover;background:var(--white);}
+        .product-info{padding:12px;}
+        .product-name{font-size:0.78rem;font-weight:600;color:var(--white);margin-bottom:4px;line-height:1.3;}
+        .product-price{font-size:0.9rem;font-weight:800;color:var(--gold);}
+        .product-colors{display:flex;gap:4px;margin-top:6px;}
+        .color-dot{width:12px;height:12px;border-radius:50%;border:1px solid rgba(255,255,255,0.2);}
+        .product-badge{display:inline-block;background:rgba(200,164,94,0.15);color:var(--gold);padding:2px 8px;border-radius:3px;font-size:0.6rem;font-weight:700;margin-top:6px;}
+
+        footer{border-top:1px solid rgba(255,255,255,0.06);padding:24px 0;text-align:center;font-size:0.72rem;color:rgba(255,255,255,0.3);}
+    </style>
+</head>
+<body>
+
+<div class="top-nav">
+    <a href="homepage-redesign.html" class="logo">
+        <div class="logo-main">LUGGAGE OUTLET</div>
+        <div class="logo-sub">Established 1979 · Singapore</div>
+    </a>
+    <div class="top-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#corporate">Corporate</a>
+        <a href="https://www.luggageoutlet.sg/collections">Shop</a>
+        <a href="index.html#quality">Quality</a>
+        <a href="operations.html">About Us</a>
+        <a href="travel-tips.html">Travel Tips</a>
+        <a href="https://wa.me/6567541322" class="cta">Get a Quote</a>
+    </div>
+</div>
+
+<div class="shop-hero">
+    <div class="container">
+        <h1>Shop Our <span>Collection</span></h1>
+        <p>Luggage, bags, and travel accessories at wholesale prices. Fast delivery across Singapore.</p>
+    </div>
+</div>
+
+<!-- CATEGORY TABS -->
+<div class="cat-tabs">
+    <button class="cat-tab active" onclick="showCat('luggage')">🧳 Luggage & Suitcases (29)</button>
+    <button class="cat-tab" onclick="showCat('bags')">🎒 Bags & Backpacks (57)</button>
+    <button class="cat-tab" onclick="showCat('accessories')">✈️ Travel Accessories (8)</button>
+</div>
+
+<div class="container">
+
+    <!-- LUGGAGE -->
+    <div id="cat-luggage" class="product-section active">
+        <div class="product-grid">
+            <a href="https://www.luggageoutlet.sg/products/petite-abs-luggage-with-8-spinner-wheels-and-number-lock" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/6005.jpg?v=1776836515" alt="Petite ABS Luggage with 8 Spinner Wheels and Number Lock" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Petite ABS Luggage with 8 Spinner Wheels and Number Lock</div>
+                    <div class="product-price">$32.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/spinning-softside-laptop-trolley-case-with-tsa-lock" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/5518_1_5ce47709-ca35-4997-9c72-53f51f5c2adb.jpg?v=1775541329" alt="Spinning Softside Laptop Trolley Case with TSA Lock Detachable Wh" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Spinning Softside Laptop Trolley Case with TSA Lock Detachable Wh</div>
+                    <div class="product-price">$95.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/elegant-hardside-polycarbonate-luggage-with-8-spinner-wheels" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/9323_6.jpg?v=1773894695" alt="Elegant Polycarbonate Aluminium Frame Luggage with 8 Spinner Whee" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Elegant Polycarbonate Aluminium Frame Luggage with 8 Spinner Whee</div>
+                    <div class="product-price">$75.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/adamantine-polypropylene-expandable-anti-theft-luggage-with-spinner-wheels-tsa-lock" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/9152_1_4608c24d-5b7f-4164-af07-2b4876754e6f.jpg?v=1773894296" alt="Adamantine Polypropylene Expandable Anti-theft Luggage with Spinn" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Adamantine Polypropylene Expandable Anti-theft Luggage with Spinn</div>
+                    <div class="product-price">$59.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/hourglass-abs-antitheft-expandable-luggage-with-8-spinner-wheels-and-number-lock" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/9692_0_f262a579-a929-4813-9371-722950d3f3c4.jpg?v=1773894808" alt="Hourglass ABS Antitheft Expandable Luggage with 8 Spinner Wheels " loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Hourglass ABS Antitheft Expandable Luggage with 8 Spinner Wheels </div>
+                    <div class="product-price">$40.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/stocky-abs-pc-aluminium-frame-with-anti-theft-zipper-front-opening-luggage-tsa-lock" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/9155_1.jpg?v=1773895164" alt="Stocky ABS+PC Aluminium Frame with Anti-theft zipper Front Openin" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Stocky ABS+PC Aluminium Frame with Anti-theft zipper Front Openin</div>
+                    <div class="product-price"><span style="text-decoration:line-through;color:rgba(255,255,255,0.3);font-size:0.7rem;">$85.00</span> $55.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/superior-softside-expandable-luggage-with-4-spinner-wheels-tsa-lock" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/9811_N1.jpg?v=1773895220" alt="Superior Softside Expandable Luggage with Double Casters and TSA " loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Superior Softside Expandable Luggage with Double Casters and TSA </div>
+                    <div class="product-price">$110.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/rangy-polycarbonate-aluminium-frame-with-anti-theft-zipper-front-opening-luggage-tsa-lock" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/9141.jpg?v=1773895034" alt="Rangy Polycarbonate Aluminium Frame with Anti-theft zipper Front " loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Rangy Polycarbonate Aluminium Frame with Anti-theft zipper Front </div>
+                    <div class="product-price">$99.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/helix-polypropylene-expandable-anti-theft-luggage-with-spinner-wheels-tsa-lock" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/9150_1.jpg?v=1773894810" alt="Helix Polypropylene Expandable Anti-theft Luggage with Spinner Wh" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Helix Polypropylene Expandable Anti-theft Luggage with Spinner Wh</div>
+                    <div class="product-price">$59.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/interlace-abs-pc-antitheft-zipper-expandable-luggage-with-tsa-lock-spinner-wheels" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/9690_5_1ba591a6-379d-4f7f-8c10-43e058c12c19.jpg?v=1773894874" alt="Interlace ABS+PC Antitheft Zipper Expandable Luggage with TSA Loc" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Interlace ABS+PC Antitheft Zipper Expandable Luggage with TSA Loc</div>
+                    <div class="product-price">$55.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/burly-softside-expandable-fabric-luggage-with-spinner-wheels" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/8623_red.jpg?v=1773894242" alt="24 inch Medium Burly Softside Expandable Fabric Luggage with Spin" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">24 inch Medium Burly Softside Expandable Fabric Luggage with Spin</div>
+                    <div class="product-price"><span style="text-decoration:line-through;color:rgba(255,255,255,0.3);font-size:0.7rem;">$37.90</span> $35.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/cavernous-abs-expandable-anti-theft-luggage-with-recessed-tsa-lock" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/9339_5.jpg?v=1773894438" alt="Cavernous ABS Expandable Anti-theft Luggage with Recessed TSA Loc" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Cavernous ABS Expandable Anti-theft Luggage with Recessed TSA Loc</div>
+                    <div class="product-price"><span style="text-decoration:line-through;color:rgba(255,255,255,0.3);font-size:0.7rem;">$85.00</span> $69.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/trenchant-abs-pc-anti-theft-expandable-zipper-luggage-with-8-spinner-wheels-tsa-lock" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/9333_2.jpg?v=1773895277" alt="28 inch Trenchant ABS+PC Anti-theft Expandable Zipper Luggage wit" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">28 inch Trenchant ABS+PC Anti-theft Expandable Zipper Luggage wit</div>
+                    <div class="product-price"><span style="text-decoration:line-through;color:rgba(255,255,255,0.3);font-size:0.7rem;">$85.00</span> $60.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/ultralight-softside-expandable-luggage-with-spinner-wheels-tsa-lock" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/9833_1.jpg?v=1773895266" alt="Ultralight Softside Expandable Luggage with Spinner Wheels TSA Lo" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Ultralight Softside Expandable Luggage with Spinner Wheels TSA Lo</div>
+                    <div class="product-price"><span style="text-decoration:line-through;color:rgba(255,255,255,0.3);font-size:0.7rem;">$85.00</span> $65.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/economical-8-wheeler-expandable-softside-fabric-suitcase" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/8783_1_4e9afaa7-7653-4692-935e-d9f79ec170f3.jpg?v=1773894621" alt="Economical Softside Expandable Luggage with Double Caster Wheels" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Economical Softside Expandable Luggage with Double Caster Wheels</div>
+                    <div class="product-price"><span style="text-decoration:line-through;color:rgba(255,255,255,0.3);font-size:0.7rem;">$39.00</span> $29.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/gripping-abs-pc-anti-theft-zipper-luggage-with-8-spinner-wheels-tsa-lock" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/9321_1.jpg?v=1773894745" alt="Gripping ABS+PC Anti-theft Zipper Luggage with 8 Spinner Wheels T" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Gripping ABS+PC Anti-theft Zipper Luggage with 8 Spinner Wheels T</div>
+                    <div class="product-price"><span style="text-decoration:line-through;color:rgba(255,255,255,0.3);font-size:0.7rem;">$70.00</span> $55.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/cabriolet-pc-expandable-luggage-with-recessed-tsa-lock" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/9329.jpg?v=1773894437" alt="Cabriolet Polycarbonate Expandable Anti-theft Luggage with Recess" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Cabriolet Polycarbonate Expandable Anti-theft Luggage with Recess</div>
+                    <div class="product-price"><span style="text-decoration:line-through;color:rgba(255,255,255,0.3);font-size:0.7rem;">$90.00</span> $79.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/inexpensive-expandable-softside-fabric-luggage" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/8558_grey.jpg?v=1773894240" alt="20 inch Cabin Size Inexpensive Expandable Softside Fabric Luggage" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">20 inch Cabin Size Inexpensive Expandable Softside Fabric Luggage</div>
+                    <div class="product-price">$26.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/the-og-ricochetting-polycarbonate-expandable-luggage-with-anti-theft-zippers-spinner-wheels-and-recessed-tsa-lock" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/9316_N_1.jpg?v=1773895220" alt="The OG Ricochetting Polycarbonate Expandable Luggage with Anti-th" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">The OG Ricochetting Polycarbonate Expandable Luggage with Anti-th</div>
+                    <div class="product-price">$70.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/elegant-polycarbonate-aluminium-frame-luggage-with-8-spinner-wheels-safe-skies-tsa-lock" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/A9320_highres.jpg?v=1773894695" alt="Elegant Polycarbonate Aluminium Frame Luggage with 8 Spinner Whee" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Elegant Polycarbonate Aluminium Frame Luggage with 8 Spinner Whee</div>
+                    <div class="product-price"><span style="text-decoration:line-through;color:rgba(255,255,255,0.3);font-size:0.7rem;">$90.00</span> $69.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/classic-8-spinner-wheels-softside-expandable-luggage" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/8790_green_35a41ce7-fc3d-4690-9cc4-2f0d10018ed0.jpg?v=1773894241" alt="24 inch Medium Classic Softside Expandable Luggage with 8 Spinner" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">24 inch Medium Classic Softside Expandable Luggage with 8 Spinner</div>
+                    <div class="product-price"><span style="text-decoration:line-through;color:rgba(255,255,255,0.3);font-size:0.7rem;">$45.00</span> $35.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/sturdy-4-spinner-wheels-softside-expandable-luggage" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/8622_brown_28_2.jpg?v=1775712336" alt="28 inch Large Sturdy Softside Expandable Fabric Luggage with Spin" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">28 inch Large Sturdy Softside Expandable Fabric Luggage with Spin</div>
+                    <div class="product-price">$46.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/contemporary-polycarbonate-aluminium-frame-luggage-with-8-spinner-wheels-safe-skies-tsa-lock" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/9148_1.jpg?v=1773894571" alt="Contemporary Polycarbonate Aluminium Frame Luggage with 8 Spinner" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Contemporary Polycarbonate Aluminium Frame Luggage with 8 Spinner</div>
+                    <div class="product-price">$85.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/executive-hardside-polycarbonate-luggage-with-8-spinner-wheels-tsa-lock" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/5032_1_4f9a80b8-43ca-4fcc-add7-49d2f83bb82f.jpg?v=1773894744" alt="Executive Cabin Size Polycarbonate Laptop Trolley Case with 8 Spi" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Executive Cabin Size Polycarbonate Laptop Trolley Case with 8 Spi</div>
+                    <div class="product-price">$115.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/basking-softside-expandable-fabric-luggage-with-spinner-wheels" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/8786_0.jpg?v=1773894357" alt="Basking Softside Expandable Fabric Luggage with Spinner Wheels" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Basking Softside Expandable Fabric Luggage with Spinner Wheels</div>
+                    <div class="product-price"><span style="text-decoration:line-through;color:rgba(255,255,255,0.3);font-size:0.7rem;">$49.00</span> $35.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/cotton-candy-polycarbonate-luggage-with-8-spinner-wheels" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/9138_1.jpg?v=1773894621" alt="Cotton Candy Polycarbonate Luggage with 8 Spinner Wheels" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Cotton Candy Polycarbonate Luggage with 8 Spinner Wheels</div>
+                    <div class="product-price">$65.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/affordable-expandable-softside-fabric-luggage" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/8556_6.jpg?v=1773894296" alt="Affordable Expandable Softside Fabric Luggage" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Affordable Expandable Softside Fabric Luggage</div>
+                    <div class="product-price">$26.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/robust-softside-expandable-fabric-luggage-with-2-cart-wheels" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/8565_1_97dae113-5c89-4e75-98ff-da1ba893a394.jpg?v=1773895129" alt="Robust Softside Expandable Fabric Luggage with 2 Cart Wheels" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Robust Softside Expandable Fabric Luggage with 2 Cart Wheels</div>
+                    <div class="product-price"><span style="text-decoration:line-through;color:rgba(255,255,255,0.3);font-size:0.7rem;">$28.90</span> $25.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/sleek-polycarbonate-luggage-with-safe-skies-tsa-locks-and-spinner-wheels" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/9109_5.jpg?v=1773895163" alt="Sleek Expandable Polycarbonate Luggage with Spinner Wheels and Re" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Sleek Expandable Polycarbonate Luggage with Spinner Wheels and Re</div>
+                    <div class="product-price">$59.00</div>
+                </div>
+            </a>
+</div>
+        <p style="text-align:center;margin-top:20px;font-size:0.82rem;color:rgba(255,255,255,0.4);">Showing featured products. Corporate bulk orders — <a href="https://wa.me/6567541322" style="color:var(--gold);text-decoration:none;">WhatsApp us</a> for full catalogue and wholesale pricing.</p>
+    </div>
+
+    <!-- BAGS -->
+    <div id="cat-bags" class="product-section">
+        <div class="product-grid">
+            <a href="https://www.luggageoutlet.sg/products/water-polo-stealthguard-slim-travel-pouch" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/2336_navy.jpg?v=1773895344" alt="Water Polo® StealthGuard Slim Travel Pouch" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Water Polo® StealthGuard Slim Travel Pouch</div>
+                    <div class="product-price">$11.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/ultraslim-anti-theft-travel-pouch-hidden-waist-strap-money-belt" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/2333_black.jpg?v=1773895315" alt="UltraSlim Anti-Theft Travel Pouch – Hidden Waist Strap Money Belt" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">UltraSlim Anti-Theft Travel Pouch – Hidden Waist Strap Money Belt</div>
+                    <div class="product-price">$8.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/triflex-multi-carry-utility-pouch-sling-belt-or-carabiner-clip" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/1863_navy.jpg?v=1773895266" alt="TriFlex Multi-Carry Utility Pouch | Sling, Belt, or Carabiner Cli" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">TriFlex Multi-Carry Utility Pouch | Sling, Belt, or Carabiner Cli</div>
+                    <div class="product-price">$13.50</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/urbancharge-15-6-laptop-backpack-with-usb-charging-port-multi-compartments" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/5849_grey.jpg?v=1773895316" alt="UrbanCharge 15.6" Laptop Backpack with USB Charging Port & Multi-" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">UrbanCharge 15.6" Laptop Backpack with USB Charging Port & Multi-</div>
+                    <div class="product-price">$28.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/utilitarian-multi-pocket-pouch-with-3-carry-options" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/1854_lblue.jpg?v=1773895316" alt="Utilitarian Multi-Pocket Pouch with 3 Carry Options" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Utilitarian Multi-Pocket Pouch with 3 Carry Options</div>
+                    <div class="product-price">$11.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/bodega-grocery-trolley-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/8344_black.jpg?v=1773894361" alt="Bodega Eco-friendly Grocery Trolley Bag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Bodega Eco-friendly Grocery Trolley Bag</div>
+                    <div class="product-price">$34.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/multi-pocket-utility-waist-pouch" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/1545_white.jpg?v=1773894930" alt="Multi-Pocket Utility Waist Pouch" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Multi-Pocket Utility Waist Pouch</div>
+                    <div class="product-price">$16.50</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/all-purpose-7-zipper-pocket-waist-pouch" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/1548_red.jpg?v=1773894357" alt="All-purpose 7 zipper pockets Waist Pouch" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">All-purpose 7 zipper pockets Waist Pouch</div>
+                    <div class="product-price">$16.50</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/comfy-casual-messenger-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/2201_black.jpg?v=1773894571" alt="Comfy Messenger Bag Full Size Tablet Bag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Comfy Messenger Bag Full Size Tablet Bag</div>
+                    <div class="product-price">$22.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/maverick-crossbody-bag-oversized-pouch" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/1934_1.jpg?v=1773894930" alt="Maverick Crossbody Bag Oversized Pouch" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Maverick Crossbody Bag Oversized Pouch</div>
+                    <div class="product-price"><span style="text-decoration:line-through;color:rgba(255,255,255,0.3);font-size:0.7rem;">$22.90</span> $16.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/beatnik-crossbody-bag-fanny-pack-chest-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/1933_1.jpg?v=1773894358" alt="Beatnik Crossbody Bag Fanny Pack Waist pouch" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Beatnik Crossbody Bag Fanny Pack Waist pouch</div>
+                    <div class="product-price"><span style="text-decoration:line-through;color:rgba(255,255,255,0.3);font-size:0.7rem;">$24.90</span> $18.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/urbane-waist-pouch" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/1932_1.jpg?v=1773895316" alt="Urbane Waist Pouch Crossbody Bag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Urbane Waist Pouch Crossbody Bag</div>
+                    <div class="product-price"><span style="text-decoration:line-through;color:rgba(255,255,255,0.3);font-size:0.7rem;">$24.90</span> $18.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/nifty-waistpouch-with-sanitiser-pouch" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/1931_grey.jpg?v=1773894930" alt="Nifty Waterproof Waistpouch" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Nifty Waterproof Waistpouch</div>
+                    <div class="product-price"><span style="text-decoration:line-through;color:rgba(255,255,255,0.3);font-size:0.7rem;">$24.90</span> $18.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/stria-backpack-school-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/5822_grey.jpg?v=1773895220" alt="Stria Backpack School Bag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Stria Backpack School Bag</div>
+                    <div class="product-price">$18.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/lucid-backpack-school-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/5848_blue.jpg?v=1773894930" alt="Lucid Backpack School Bag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Lucid Backpack School Bag</div>
+                    <div class="product-price">$18.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/courtly-6-pocket-waist-pouch-bumbag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/1833_navy.jpg?v=1773894621" alt="Courtly 6-pocket Waist Pouch Bumbag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Courtly 6-pocket Waist Pouch Bumbag</div>
+                    <div class="product-price">$17.50</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/austere-canvas-backpack-school-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/4712_black.jpg?v=1773894358" alt="Austere Canvas Backpack School Bag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Austere Canvas Backpack School Bag</div>
+                    <div class="product-price">$26.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/vintage-canvas-school-backpack" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/4711_green_N.jpg?v=1773895316" alt="Vintage Canvas School Backpack" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Vintage Canvas School Backpack</div>
+                    <div class="product-price">$25.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/money-pouch-travel-wallet" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/1133_grey.jpg?v=1773894809" alt="Inconspicuous Waterproof Money Belt Travel Pouch" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Inconspicuous Waterproof Money Belt Travel Pouch</div>
+                    <div class="product-price">$6.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/primo-lightweight-school-bag-backpack" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/5823_blue.jpg?v=1773894973" alt="Primo Lightweight School Bag Backpack" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Primo Lightweight School Bag Backpack</div>
+                    <div class="product-price">$18.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/palatial-large-backpack-school-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/5845_blue.jpg?v=1773894973" alt="Palatial Large Backpack School Bag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Palatial Large Backpack School Bag</div>
+                    <div class="product-price">$24.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/elementary-lightweight-school-bag-backpack" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/5815_grey.jpg?v=1773894695" alt="Elementary Lightweight School Bag Backpack" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Elementary Lightweight School Bag Backpack</div>
+                    <div class="product-price">$18.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/debonair-waterproof-lightweight-backpack-with-usb-port" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/3604_navy.jpg?v=1773894621" alt="Debonair Waterproof Laptop Backpack with USB Charging Port" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Debonair Waterproof Laptop Backpack with USB Charging Port</div>
+                    <div class="product-price"><span style="text-decoration:line-through;color:rgba(255,255,255,0.3);font-size:0.7rem;">$34.90</span> $24.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/strapping-waterproof-laptop-backpack-with-usb-charging-port" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/3602_black.jpg?v=1773895220" alt="Strapping Waterproof Laptop Backpack with USB Charging Port" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Strapping Waterproof Laptop Backpack with USB Charging Port</div>
+                    <div class="product-price"><span style="text-decoration:line-through;color:rgba(255,255,255,0.3);font-size:0.7rem;">$34.90</span> $24.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/backpack-with-anti-theft-back-zipper" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/3603_grey.jpg?v=1773894973" alt="Preppy Waterproof Laptop Backpack School Bag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Preppy Waterproof Laptop Backpack School Bag</div>
+                    <div class="product-price"><span style="text-decoration:line-through;color:rgba(255,255,255,0.3);font-size:0.7rem;">$34.90</span> $24.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/svelte-17inch-laptop-backpack" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/9901_1.jpg?v=1773895219" alt="Svelte Waterproof 17 inch Laptop Backpack" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Svelte Waterproof 17 inch Laptop Backpack</div>
+                    <div class="product-price"><span style="text-decoration:line-through;color:rgba(255,255,255,0.3);font-size:0.7rem;">$49.00</span> $32.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/weathered-canvas-waistbag-pouch" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/3515_black.jpg?v=1773895344" alt="Weathered Canvas Waistbag Pouch" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Weathered Canvas Waistbag Pouch</div>
+                    <div class="product-price">$16.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/weekender-duffel-bag-cabin-size-travel-bag-40l" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/7389_grey.jpg?v=1773895344" alt="Weekender 29L Waterproof Duffel Bag Cabin Size Travel Bag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Weekender 29L Waterproof Duffel Bag Cabin Size Travel Bag</div>
+                    <div class="product-price">$30.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/arm-pouch-with-belt-loop-and-carabiner" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/1852_3.jpg?v=1773894356" alt="Arm Pouch with Belt Loop and Carabiner" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Arm Pouch with Belt Loop and Carabiner</div>
+                    <div class="product-price">$11.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/vintage-canvas-sling-bag-messenger-bag-for-tablet" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/2330_black.jpg?v=1773895315" alt="Vintage Canvas Sling Bag Messenger Bag for Tablet" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Vintage Canvas Sling Bag Messenger Bag for Tablet</div>
+                    <div class="product-price">$20.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/itinerant-4-wheeler-trolley-backpack-laptop-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/7795.jpg?v=1773894874" alt="Itinerant 4-wheeler Trolley Backpack Laptop Bag with External USB" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Itinerant 4-wheeler Trolley Backpack Laptop Bag with External USB</div>
+                    <div class="product-price">$70.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/weaving-carry-on-laptop-trolley-backpack-with-spinner-wheels" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/7796.jpg?v=1773895344" alt="Weaving Laptop Trolley Backpack with Spinner Wheels and External " loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Weaving Laptop Trolley Backpack with Spinner Wheels and External </div>
+                    <div class="product-price">$70.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/candor-waistpouch-with-6-pockets" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/1539_white.jpg?v=1773894437" alt="Candor Waistpouch with 6 Pockets" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Candor Waistpouch with 6 Pockets</div>
+                    <div class="product-price">$15.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/roomy-52l-staycation-duffel-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/7401_navy.jpg?v=1773895129" alt="Roomy 52L Staycation Duffel Bag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Roomy 52L Staycation Duffel Bag</div>
+                    <div class="product-price">$32.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/overnighter-45l-staycation-duffel-bag-travel-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/7399_grey.jpg?v=1773894973" alt="Overnighter 45L Staycation Duffel Bag Travel Bag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Overnighter 45L Staycation Duffel Bag Travel Bag</div>
+                    <div class="product-price">$35.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/simple-messenger-sling-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/2199_1.jpg?v=1773895163" alt="Simple Full Sized Tablet Sling Bag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Simple Full Sized Tablet Sling Bag</div>
+                    <div class="product-price">$22.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/compact-mini-tablet-bag-sling-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/2211_1.jpg?v=1773895344" alt="Waterproof Compact Mini Tablet Bag Sling Bag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Waterproof Compact Mini Tablet Bag Sling Bag</div>
+                    <div class="product-price">$19.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/bumbag-waistbag-with-reflective-strip" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/1915_navy.jpg?v=1775019275" alt="Bumbag Waistbag with Reflective strip" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Bumbag Waistbag with Reflective strip</div>
+                    <div class="product-price">$14.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/gallant-6-pocket-waist-pouch-waistbag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/1914_black.jpg?v=1773894744" alt="Gallant 6 pocket Waist pouch Waistbag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Gallant 6 pocket Waist pouch Waistbag</div>
+                    <div class="product-price">$17.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/whizzing-upsized-8-wheel-trolley-backpack-shopping-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/8343_blackpink.jpg?v=1773895344" alt="Whizzing 8-wheel Detachable Trolley Backpack Waterproof Shopping " loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Whizzing 8-wheel Detachable Trolley Backpack Waterproof Shopping </div>
+                    <div class="product-price">$55.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/sporty-duffel-bag-gym-bag-travel-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/7404_grey.jpg?v=1773895163" alt="Sporty 30L Waterproof Duffel Bag Gym Bag Travel Bag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Sporty 30L Waterproof Duffel Bag Gym Bag Travel Bag</div>
+                    <div class="product-price">$29.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/handy-waterproof-duffel-bag-fitness-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/7403_blue.jpg?v=1773894744" alt="Handy 50L Waterproof Duffel Bag Water Sports Bag Fitness Bag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Handy 50L Waterproof Duffel Bag Water Sports Bag Fitness Bag</div>
+                    <div class="product-price">$32.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/hipster-oversized-crossbody-bag-pouch" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/1922_black.jpg?v=1773894811" alt="Hipster Oversized Crossbody Bag Pouch" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Hipster Oversized Crossbody Bag Pouch</div>
+                    <div class="product-price">$22.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/polyvalent-47l-waterproof-duffel-bag-water-sports-bag-fitness-backpack" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/7386_N2_1.jpg?v=1773894973" alt="Polyvalent 47L Waterproof Duffel Bag Water Sports Bag Fitness Bac" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Polyvalent 47L Waterproof Duffel Bag Water Sports Bag Fitness Bac</div>
+                    <div class="product-price">$32.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/mobile-canvas-sling-bag-messenger-bag-for-tablet" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/2325_green.jpg?v=1773894929" alt="Mobile Canvas Sling Bag Messenger Bag for Tablet" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Mobile Canvas Sling Bag Messenger Bag for Tablet</div>
+                    <div class="product-price">$20.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/preppy-waterproof-cross-body-tablet-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/2202_grey.jpg?v=1773894973" alt="Preppy Crossbody Bag Tablet Bag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Preppy Crossbody Bag Tablet Bag</div>
+                    <div class="product-price">$22.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/seasoned-canvas-waist-pack-outdoor-pouch" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/1555_khaki.jpg?v=1773895129" alt="Seasoned Canvas Waist Pack Outdoor Pouch" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Seasoned Canvas Waist Pack Outdoor Pouch</div>
+                    <div class="product-price">$17.50</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/spry-nylon-waist-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/1836_black.jpg?v=1773895163" alt="Spry Nylon Waist Bag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Spry Nylon Waist Bag</div>
+                    <div class="product-price">$16.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/motile-nylon-unisex-waistbag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/1835_grey.jpg?v=1773894929" alt="Motile Nylon Unisex Waistbag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Motile Nylon Unisex Waistbag</div>
+                    <div class="product-price">$16.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/commodious-waist-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/1834_navy.jpg?v=1773894571" alt="Commodious Nylon Waist Bag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Commodious Nylon Waist Bag</div>
+                    <div class="product-price">$17.50</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/modish-4-wheel-detachable-trolley-backpack-laptop-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/8333_black.jpg?v=1773894929" alt="Modish 8-wheel Detachable Trolley Backpack" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Modish 8-wheel Detachable Trolley Backpack</div>
+                    <div class="product-price">$60.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/chic-detachable-trolley-backpack" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/8331_black.jpg?v=1773894571" alt="Chic Detachable Trolley Backpack" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Chic Detachable Trolley Backpack</div>
+                    <div class="product-price">$50.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/featherweight-waist-pouch-waistbag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/1125_green.jpg?v=1773894744" alt="Featherweight Canvas Travel Pouch Waistpouch" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Featherweight Canvas Travel Pouch Waistpouch</div>
+                    <div class="product-price">$8.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/detachable-trolley-backpack" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/8327_2_040d08d7-7488-4203-965f-1f45638578c4.jpg?v=1773894621" alt="Coveted Detachable Trolley Waterproof Backpack with Spinner Wheel" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Coveted Detachable Trolley Waterproof Backpack with Spinner Wheel</div>
+                    <div class="product-price">$55.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/rolling-carry-on-laptop-trolley-backpack-with-spinner-wheels" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/8326_1.jpg?v=1773895129" alt="Rolling Detachable Trolley Waterproof Backpack with Spinner Wheel" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Rolling Detachable Trolley Waterproof Backpack with Spinner Wheel</div>
+                    <div class="product-price">$50.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/whiz-4-wheel-trolley-shopping-bag-travel-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/8321_blackpink.jpg?v=1773895345" alt="Whiz 8-wheel Trolley Shopping Bag Waterproof Travel Bag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Whiz 8-wheel Trolley Shopping Bag Waterproof Travel Bag</div>
+                    <div class="product-price">$49.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/6-pocket-canvas-waistbag-pouch" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/1556_green.jpg?v=1773895129" alt="Rugged 6-Pocket Canvas Waistbag Pouch" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Rugged 6-Pocket Canvas Waistbag Pouch</div>
+                    <div class="product-price">$17.50</div>
+                </div>
+            </a>
+</div>
+        <p style="text-align:center;margin-top:20px;font-size:0.82rem;color:rgba(255,255,255,0.4);">Showing featured products. Full range available — <a href="https://wa.me/6567541322" style="color:var(--gold);text-decoration:none;">WhatsApp us</a> for catalogue.</p>
+    </div>
+
+    <!-- ACCESSORIES -->
+    <div id="cat-accessories" class="product-section">
+        <div class="product-grid">
+            <a href="https://www.luggageoutlet.sg/products/foldable-trolley-with-detachable-wheels-copy" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/trolleyv32.jpg?v=1777009160" alt="Foldable Trolley with Detachable Wheels (v3)" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Foldable Trolley with Detachable Wheels (v3)</div>
+                    <div class="product-price">$10.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/foldable-trolley-with-detachable-wheels" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/trolleyv2.jpg?v=1777008665" alt="Foldable Trolley with Detachable Wheels" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Foldable Trolley with Detachable Wheels</div>
+                    <div class="product-price">$10.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/tsa-number-combination-lock-metal-padlock" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/T169_1.jpg?v=1773895266" alt="TSA Number Combination Lock Metal Padlock" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">TSA Number Combination Lock Metal Padlock</div>
+                    <div class="product-price">$7.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/luggage-strap-with-number-combination-lock" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/T168_pink.jpg?v=1773895129" alt="Sécurisé Luggage Strap with Number Combination Lock" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Sécurisé Luggage Strap with Number Combination Lock</div>
+                    <div class="product-price">$8.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/lit-luggage-wheel-rubber-cover-set-of-8-pieces" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/700_lum_aqua_lit_comb.jpg?v=1773894874" alt="Lit Luggage Wheel Rubber Cover Protector (Set of 8 pieces)" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Lit Luggage Wheel Rubber Cover Protector (Set of 8 pieces)</div>
+                    <div class="product-price">$7.90</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/voyaging-trolley-bag-with-wheels-duffel-bag" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/8869_1.jpg?v=1773895315" alt="Voyaging Trolley Bag with Wheels Duffel Bag" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Voyaging Trolley Bag with Wheels Duffel Bag</div>
+                    <div class="product-price">$35.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/odyssey-trolley-bag-duffel-bag-with-wheels" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/files/8868_1.jpg?v=1773894973" alt="Odyssey Trolley Bag Duffel Bag with Wheels" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Odyssey Trolley Bag Duffel Bag with Wheels</div>
+                    <div class="product-price">$35.00</div>
+                </div>
+            </a>
+            <a href="https://www.luggageoutlet.sg/products/cosmopolitan-elastic-luggage-cover" target="_blank" class="product-card" style="text-decoration:none;">
+                <img class="product-img" src="https://cdn.shopify.com/s/files/1/1024/6415/products/202.jpg?v=1773894571" alt="Cosmopolitan Elastic Luggage Cover Best as Singapore Souvenir" loading="lazy"/>
+                <div class="product-info">
+                    <div class="product-name">Cosmopolitan Elastic Luggage Cover Best as Singapore Souvenir</div>
+                    <div class="product-price">$16.00</div>
+                </div>
+            </a>
+</div>
+        <p style="text-align:center;margin-top:20px;font-size:0.82rem;color:rgba(255,255,255,0.4);">Showing featured products. Full range available — <a href="https://wa.me/6567541322" style="color:var(--gold);text-decoration:none;">WhatsApp us</a> for catalogue.</p>
+    </div>
+
+</div>
+
+
+<!-- PAYMENT METHODS -->
+<div style="padding:20px 0;border-top:1px solid rgba(255,255,255,0.06);text-align:center;">
+    <div class="container">
+        <p style="font-size:0.7rem;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;">Accepted Payment Methods</p>
+        <img src="https://cdn.shopify.com/s/files/1/1024/6415/files/Payment_modes_4be5a330-6af8-4815-a435-d5ec961b4bc2.jpg" alt="Payment methods — Visa, Mastercard, PayNow, GrabPay, Atome" style="max-width:400px;width:100%;border-radius:6px;"/>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; Luggage Outlet Singapore (Sin Kwang Wah) · Est. 1979 · Blk 1024 Yishun Industrial Park A #03-29, Singapore 768763</p>
+</footer>
+
+<script>
+function showCat(cat){
+    document.querySelectorAll('.product-section').forEach(s=>s.classList.remove('active'));
+    document.getElementById('cat-'+cat).classList.add('active');
+    document.querySelectorAll('.cat-tab').forEach(t=>t.classList.remove('active'));
+    event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
