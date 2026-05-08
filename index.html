@@ -103,10 +103,10 @@
         .logo{text-decoration:none;color:var(--white);}
         .logo-main{font-size:1.2rem;font-weight:800;letter-spacing:2px;}
         .logo-sub{font-size:0.6rem;color:var(--gold);letter-spacing:3px;text-transform:uppercase;}
-        .nav-links{display:flex;gap:20px;list-style:none;align-items:center;}
-        .nav-links a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.8rem;font-weight:500;letter-spacing:0.5px;transition:color 0.2s;}
+        .nav-links{display:flex;gap:16px;list-style:none;align-items:center;flex-wrap:nowrap;}
+        .nav-links a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.78rem;font-weight:500;letter-spacing:0.3px;transition:color 0.2s;white-space:nowrap;}
         .nav-links a:hover{color:var(--white);}
-        .nav-cta{background:var(--gold) !important;color:var(--navy) !important;padding:9px 18px;border-radius:6px;font-weight:700 !important;white-space:nowrap;}
+        .nav-cta{background:var(--gold) !important;color:var(--navy) !important;padding:8px 14px;border-radius:6px;font-weight:700 !important;white-space:nowrap;font-size:0.75rem !important;}
         
         .hamburger{display:none;color:var(--white);font-size:1.5rem;cursor:pointer;}
         /* GTranslate dropdown styling in nav */
@@ -348,7 +348,7 @@
             <li><a href="#quality">Quality</a></li>
             <li><a href="operations.html">About Us</a></li>
             <li><a href="travel-tips.html">Travel Tips</a></li>
-            <li><a href="https://wa.me/6567541322?text=Hi%2C%20I%27d%20like%20a%20corporate%20quote." class="nav-cta">Get a Quote</a></li>
+            <li><a href="mailto:sales@luggageoutlet.sg?subject=Corporate%20Quote%20Request" class="nav-cta">Get Quote</a></li>
             <li class="gtranslate_wrapper" style="margin-left:4px;"></li>
         </ul>
         <div style="display:flex;align-items:center;gap:8px;">
@@ -1058,14 +1058,17 @@
     <span class="chat-popup-close" onclick="event.stopPropagation();document.getElementById('chatPopup').style.display='none';">&times;</span>
 </div>
 
-<!-- REVIEW POPUP (social proof notification) -->
+<!-- REVIEW POPUP (social proof notification with product image) -->
 <div class="review-popup" id="reviewPopup">
     <span class="review-close" onclick="document.getElementById('reviewPopup').classList.remove('show');">&times;</span>
-    <div class="review-content">
-        <div class="review-stars" id="reviewStars"></div>
-        <div class="review-name" id="reviewName"></div>
-        <div class="review-text" id="reviewText"></div>
-        <div class="review-time" id="reviewTime"></div>
+    <div style="display:flex;gap:12px;align-items:flex-start;">
+        <img id="reviewImg" src="" alt="Customer review photo" style="width:70px;height:70px;border-radius:8px;object-fit:cover;flex-shrink:0;">
+        <div class="review-content">
+            <div class="review-name" id="reviewName"></div>
+            <div class="review-stars" id="reviewStars"></div>
+            <div class="review-text" id="reviewText"></div>
+            <div class="review-time" id="reviewTime"></div>
+        </div>
     </div>
 </div>
 
@@ -1302,23 +1305,24 @@ function botReply(input){
 // === REVIEW POPUPS (real reviews, cycle every 25s) ===
 (function(){
     var reviews=[
-        {name:"Khomariah K.",stars:4,text:"Fast delivery and in good condition. The size is just nice for short trips.",time:"2 days ago"},
-        {name:"Rachel T.",stars:5,text:"Bought 3-piece set for family trip to Japan. Excellent quality at wholesale price!",time:"1 week ago"},
-        {name:"Ahmad S.",stars:5,text:"Corporate order for 50 backpacks with company logo. Professional service, fast turnaround.",time:"3 days ago"},
-        {name:"Michelle L.",stars:5,text:"The cabin size fits perfectly in Scoot overhead. Love the rose gold colour!",time:"5 days ago"},
-        {name:"David C.",stars:4,text:"Helped me reset my stuck TSA lock for free. Very patient staff at Yishun showroom.",time:"1 week ago"},
-        {name:"Priya M.",stars:5,text:"Best luggage deal in Singapore! 28-inch hard-case for only $45. Can't beat that.",time:"4 days ago"},
-        {name:"Jason W.",stars:5,text:"Ordered trolley bags for our Disney cruise. Kids loved the bright colours!",time:"2 weeks ago"},
-        {name:"Lin Hui F.",stars:4,text:"Good range of backpacks. Bought laptop backpack for $12.90 — great value.",time:"6 days ago"},
-        {name:"Sarah N.",stars:5,text:"47 years in business says it all. Trustworthy, knowledgeable, fair prices.",time:"1 week ago"},
-        {name:"Ravi K.",stars:5,text:"Nu Skin event bags — 200 pieces with embroidery. Delivered on time, perfect quality.",time:"3 weeks ago"},
-        {name:"Jenny O.",stars:4,text:"Luggage strap and packing cubes changed my packing game. Will buy more!",time:"4 days ago"},
-        {name:"Wei Ming T.",stars:5,text:"Expandable softside is genius — bought extra durian and snacks from Bangkok!",time:"1 week ago"}
+        {name:"Khomariah K.",stars:4,text:"Fast delivery and in good condition. The size is just nice for short trips.",time:"2 days ago",img:"https://cdn.shopify.com/s/files/1/1024/6415/files/9323_6.jpg?v=1773894695"},
+        {name:"Rachel T.",stars:5,text:"Bought 3-piece set for family trip to Japan. Excellent quality at wholesale price!",time:"1 week ago",img:"https://cdn.shopify.com/s/files/1/1024/6415/files/9152_1_4608c24d-5b7f-4164-af07-2b4876754e6f.jpg?v=1773894296"},
+        {name:"Ahmad S.",stars:5,text:"Corporate order for 50 backpacks with company logo. Professional service, fast turnaround.",time:"3 days ago",img:"https://cdn.shopify.com/s/files/1/1024/6415/files/8898_BK_1.jpg?v=1773895299"},
+        {name:"Michelle L.",stars:5,text:"The cabin size fits perfectly in Scoot overhead. Love the rose gold colour!",time:"5 days ago",img:"https://cdn.shopify.com/s/files/1/1024/6415/files/6005.jpg?v=1776836515"},
+        {name:"David C.",stars:4,text:"Helped me reset my stuck TSA lock for free. Very patient staff at Yishun showroom.",time:"1 week ago",img:"https://cdn.shopify.com/s/files/1/1024/6415/files/9155_1.jpg?v=1773895164"},
+        {name:"Priya M.",stars:5,text:"Best luggage deal in Singapore! 28-inch hard-case for only $45. Can't beat that.",time:"4 days ago",img:"https://cdn.shopify.com/s/files/1/1024/6415/files/9333_2.jpg?v=1773895277"},
+        {name:"Jason W.",stars:5,text:"Ordered trolley bags for our Disney cruise. Kids loved the bright colours!",time:"2 weeks ago",img:"https://cdn.shopify.com/s/files/1/1024/6415/files/9692_0_f262a579-a929-4813-9371-722950d3f3c4.jpg?v=1773894808"},
+        {name:"Lin Hui F.",stars:4,text:"Good range of backpacks. Bought laptop backpack for $12.90 — great value.",time:"6 days ago",img:"https://cdn.shopify.com/s/files/1/1024/6415/files/8898_BK_1.jpg?v=1773895299"},
+        {name:"Sarah N.",stars:5,text:"47 years in business says it all. Trustworthy, knowledgeable, fair prices.",time:"1 week ago",img:"https://cdn.shopify.com/s/files/1/1024/6415/files/9141.jpg?v=1773895034"},
+        {name:"Ravi K.",stars:5,text:"Nu Skin event bags — 200 pieces with embroidery. Delivered on time, perfect quality.",time:"3 weeks ago",img:"https://cdn.shopify.com/s/files/1/1024/6415/files/8783_1_4e9afaa7-7653-4692-935e-d9f79ec170f3.jpg?v=1773894621"},
+        {name:"Jenny O.",stars:4,text:"Luggage strap and packing cubes changed my packing game. Will buy more!",time:"4 days ago",img:"https://cdn.shopify.com/s/files/1/1024/6415/files/T168_pink.jpg?v=1773895129"},
+        {name:"Wei Ming T.",stars:5,text:"Expandable softside is genius — bought extra durian and snacks from Bangkok!",time:"1 week ago",img:"https://cdn.shopify.com/s/files/1/1024/6415/products/9811_N1.jpg?v=1773895220"}
     ];
     var ridx=0;
     function showReview(){
         var r=reviews[ridx];
         var stars='';for(var i=0;i<5;i++) stars+=(i<r.stars?'★':'☆');
+        document.getElementById('reviewImg').src=r.img;
         document.getElementById('reviewStars').textContent=stars;
         document.getElementById('reviewName').textContent=r.name;
         document.getElementById('reviewText').textContent='"'+r.text+'"';
