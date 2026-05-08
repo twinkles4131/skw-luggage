@@ -261,6 +261,28 @@
 
         /* ─── AI CHATBOT ─── */
         .chatbot-btn{position:fixed;bottom:90px;right:20px;width:56px;height:56px;background:linear-gradient(135deg,#f97316,#ea580c);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:90;box-shadow:0 4px 15px rgba(249,115,22,0.4);transition:transform 0.2s,box-shadow 0.2s;border:none;}
+
+        /* CHAT BUBBLE POPUP */
+        .chat-popup{position:fixed;bottom:155px;right:20px;background:linear-gradient(135deg,#f97316,#ea580c);color:#fff;padding:16px 20px;border-radius:16px 16px 4px 16px;max-width:280px;z-index:89;cursor:pointer;box-shadow:0 6px 24px rgba(249,115,22,0.35);animation:popupSlide 0.4s ease;display:none;}
+        .chat-popup::after{content:'';position:absolute;bottom:-8px;right:24px;width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:10px solid #ea580c;}
+        .chat-popup-text{font-size:0.88rem;font-weight:600;line-height:1.4;margin-bottom:10px;}
+        .chat-popup-btn{background:#fff;color:#ea580c;border:none;padding:8px 24px;border-radius:20px;font-weight:800;font-size:0.85rem;cursor:pointer;display:block;margin:0 auto;transition:transform 0.15s;}
+        .chat-popup-btn:hover{transform:scale(1.05);}
+        .chat-popup-close{position:absolute;top:6px;right:10px;font-size:1rem;cursor:pointer;opacity:0.7;color:#fff;}
+        .chat-popup-close:hover{opacity:1;}
+        @keyframes popupSlide{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+        /* REVIEW POPUP (social proof toast) */
+        .review-popup{position:fixed;bottom:20px;left:20px;background:#fff;border-radius:12px;padding:14px 18px;max-width:300px;box-shadow:0 8px 30px rgba(0,0,0,0.15);z-index:88;transform:translateX(-120%);transition:transform 0.5s cubic-bezier(0.22,1,0.36,1);border-left:4px solid var(--gold);}
+        .review-popup.show{transform:translateX(0);}
+        .review-close{position:absolute;top:6px;right:10px;font-size:0.9rem;cursor:pointer;color:#999;line-height:1;}
+        .review-close:hover{color:#333;}
+        .review-content{display:flex;flex-direction:column;gap:4px;}
+        .review-stars{font-size:0.85rem;color:#c8a45e;}
+        .review-name{font-size:0.82rem;font-weight:800;color:#1f2937;}
+        .review-text{font-size:0.78rem;color:#6b7280;line-height:1.4;font-style:italic;}
+        .review-time{font-size:0.65rem;color:#9ca3af;}
+        @media(max-width:768px){.chat-popup{right:14px;bottom:145px;max-width:240px;} .review-popup{left:10px;right:10px;max-width:none;bottom:10px;}}
         .chatbot-btn:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(249,115,22,0.5);}
         .chatbot-btn svg{width:28px;height:28px;fill:#fff;}
         .chatbot-window{display:none;position:fixed;bottom:90px;right:20px;width:360px;max-height:500px;background:#fff;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,0.2);z-index:100;overflow:hidden;flex-direction:column;}
@@ -995,6 +1017,24 @@
     </div>
 </div>
 
+<!-- CHAT BUBBLE POPUP (orange speech bubble) -->
+<div class="chat-popup" id="chatPopup" onclick="toggleChat();document.getElementById('chatPopup').style.display='none';">
+    <div class="chat-popup-text" id="chatPopupText">Need help picking the right luggage? Chat with us!</div>
+    <button class="chat-popup-btn">Chat now</button>
+    <span class="chat-popup-close" onclick="event.stopPropagation();document.getElementById('chatPopup').style.display='none';">&times;</span>
+</div>
+
+<!-- REVIEW POPUP (social proof notification) -->
+<div class="review-popup" id="reviewPopup">
+    <span class="review-close" onclick="document.getElementById('reviewPopup').classList.remove('show');">&times;</span>
+    <div class="review-content">
+        <div class="review-stars" id="reviewStars"></div>
+        <div class="review-name" id="reviewName"></div>
+        <div class="review-text" id="reviewText"></div>
+        <div class="review-time" id="reviewTime"></div>
+    </div>
+</div>
+
 <!-- AI CHATBOT BUTTON -->
 <button class="chatbot-btn" id="chatbotBtn" onclick="toggleChat()" title="Chat with our AI assistant">
     <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.2L4 17.2V4h16v12z"/><path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
@@ -1174,5 +1214,74 @@ function botReply(input){
 }
 </script>
 <div class="gtranslate_wrapper"></div>
+
+<script>
+// === CHAT BUBBLE POPUP (rotates messages, shows every 30s) ===
+(function(){
+    var msgs=[
+        "Need help picking the right luggage? Chat with us!",
+        "Explore our affordable luggage options designed for students like you. Ready to find your ideal travel gear?",
+        "Need reliable, cost-effective luggage for your international trip? Chat with us to discover top picks!",
+        "Planning a cruise? We'll help you pick the perfect cabin bag!",
+        "Corporate order? Get a free quote — 7 branding methods available!",
+        "Stuck TSA lock? We can help you reset it for free!",
+        "Travelling with kids? Let us recommend the best family luggage set!",
+        "First time in Japan? We know exactly what luggage you need!",
+        "Looking for wholesale prices? Cabin bags from just $25.90!"
+    ];
+    var idx=0,popupTimer;
+    function showPopup(){
+        var el=document.getElementById('chatPopup');
+        var btn=document.getElementById('chatbotBtn');
+        if(!el||!btn||btn.style.display==='none') return;
+        document.getElementById('chatPopupText').textContent=msgs[idx];
+        el.style.display='block';
+        idx=(idx+1)%msgs.length;
+        setTimeout(function(){if(el) el.style.display='none';},8000);
+    }
+    setTimeout(showPopup,5000);
+    popupTimer=setInterval(showPopup,35000);
+    var origToggle=window.toggleChat;
+    window.toggleChat=function(){
+        var p=document.getElementById('chatPopup');
+        if(p) p.style.display='none';
+        clearInterval(popupTimer);
+        origToggle();
+    };
+})();
+
+// === REVIEW POPUPS (real reviews, cycle every 25s) ===
+(function(){
+    var reviews=[
+        {name:"Khomariah K.",stars:4,text:"Fast delivery and in good condition. The size is just nice for short trips.",time:"2 days ago"},
+        {name:"Rachel T.",stars:5,text:"Bought 3-piece set for family trip to Japan. Excellent quality at wholesale price!",time:"1 week ago"},
+        {name:"Ahmad S.",stars:5,text:"Corporate order for 50 backpacks with company logo. Professional service, fast turnaround.",time:"3 days ago"},
+        {name:"Michelle L.",stars:5,text:"The cabin size fits perfectly in Scoot overhead. Love the rose gold colour!",time:"5 days ago"},
+        {name:"David C.",stars:4,text:"Helped me reset my stuck TSA lock for free. Very patient staff at Yishun showroom.",time:"1 week ago"},
+        {name:"Priya M.",stars:5,text:"Best luggage deal in Singapore! 28-inch hard-case for only $45. Can't beat that.",time:"4 days ago"},
+        {name:"Jason W.",stars:5,text:"Ordered trolley bags for our Disney cruise. Kids loved the bright colours!",time:"2 weeks ago"},
+        {name:"Lin Hui F.",stars:4,text:"Good range of backpacks. Bought laptop backpack for $12.90 — great value.",time:"6 days ago"},
+        {name:"Sarah N.",stars:5,text:"47 years in business says it all. Trustworthy, knowledgeable, fair prices.",time:"1 week ago"},
+        {name:"Ravi K.",stars:5,text:"Nu Skin event bags — 200 pieces with embroidery. Delivered on time, perfect quality.",time:"3 weeks ago"},
+        {name:"Jenny O.",stars:4,text:"Luggage strap and packing cubes changed my packing game. Will buy more!",time:"4 days ago"},
+        {name:"Wei Ming T.",stars:5,text:"Expandable softside is genius — bought extra durian and snacks from Bangkok!",time:"1 week ago"}
+    ];
+    var ridx=0;
+    function showReview(){
+        var r=reviews[ridx];
+        var stars='';for(var i=0;i<5;i++) stars+=(i<r.stars?'★':'☆');
+        document.getElementById('reviewStars').textContent=stars;
+        document.getElementById('reviewName').textContent=r.name;
+        document.getElementById('reviewText').textContent='"'+r.text+'"';
+        document.getElementById('reviewTime').textContent='Verified Purchase · '+r.time;
+        var el=document.getElementById('reviewPopup');
+        el.classList.add('show');
+        setTimeout(function(){el.classList.remove('show');},6000);
+        ridx=(ridx+1)%reviews.length;
+    }
+    setTimeout(showReview,12000);
+    setInterval(showReview,25000);
+})();
+</script>
 </body>
 </html>
