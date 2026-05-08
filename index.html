@@ -24,6 +24,7 @@
     <style>
         :root{--navy:#022461;--navy-dark:#011638;--gold:#c8a45e;--gold-light:#e8d5a8;--white:#fff;--off-white:#f7f6f3;--gray-100:#e5e7eb;--gray-300:#d1d5db;--gray-500:#6b7280;--gray-800:#1f2937;--gray-900:#111827;}
         *{margin:0;padding:0;box-sizing:border-box;}
+        html,body{overflow-x:hidden;max-width:100vw;}
         body{font-family:'Inter',sans-serif;color:var(--gray-800);}
         .container{max-width:1200px;margin:0 auto;padding:0 32px;}
         img{display:block;}
@@ -217,7 +218,8 @@
         @media(max-width:768px){
             .chatbot-window{width:calc(100vw - 32px);right:16px;bottom:80px;max-height:60vh;}
             .chatbot-btn{bottom:80px;right:16px;}
-            .referral-tab{padding:8px 6px;font-size:0.65rem;}
+            .referral-tab{display:none !important;}
+            .reviews-side-tab{display:none !important;}
         }
 
         /* MOBILE FIXES */
@@ -252,6 +254,7 @@
             <li><a href="https://wa.me/6567541322?text=Hi%2C%20I%27d%20like%20a%20corporate%20quote." class="nav-cta">Get a Quote</a></li>
         </ul>
         <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">&#9776;</div>
+        <script>document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){document.querySelector('.nav-links').classList.remove('mobile-open');});});</script>
     </div>
 </nav>
 
@@ -904,7 +907,7 @@
 <div class="referral-tab" onclick="document.getElementById('referralOverlay').classList.add('active')">Get $10</div>
 
 <!-- REVIEWS TAB (below referral) -->
-<div style="position:fixed;right:0;top:calc(50% + 60px);background:#3b82f6;color:#fff;padding:12px 8px;border-radius:8px 0 0 8px;cursor:pointer;z-index:90;font-size:0.75rem;font-weight:700;writing-mode:vertical-rl;text-orientation:mixed;letter-spacing:1px;box-shadow:-2px 2px 8px rgba(0,0,0,0.2);transition:background 0.2s;" onclick="document.getElementById('reviews').scrollIntoView({behavior:'smooth'})" onmouseover="this.style.background='#2563eb'" onmouseout="this.style.background='#3b82f6'">&#9733; Reviews</div>
+<div class="reviews-side-tab" style="position:fixed;right:0;top:calc(50% + 60px);background:#3b82f6;color:#fff;padding:12px 8px;border-radius:8px 0 0 8px;cursor:pointer;z-index:90;font-size:0.75rem;font-weight:700;writing-mode:vertical-rl;text-orientation:mixed;letter-spacing:1px;box-shadow:-2px 2px 8px rgba(0,0,0,0.2);transition:background 0.2s;" onclick="document.getElementById('reviews').scrollIntoView({behavior:'smooth'})" onmouseover="this.style.background='#2563eb'" onmouseout="this.style.background='#3b82f6'">&#9733; Reviews</div>
 
 <!-- REFERRAL POPUP -->
 <div class="referral-overlay" id="referralOverlay">
