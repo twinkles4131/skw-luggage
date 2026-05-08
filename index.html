@@ -1149,19 +1149,36 @@ var i18n={
         contact:'Hubungi kami! &#128205;<br><br><b>Alamat:</b> Blk 1024 Yishun Industrial Park A, #03-29, Singapore 768763<br><b>Telepon:</b> <a href="tel:+6567541322" style="color:#f97316;font-weight:700;">6754 1322</a><br><b>WhatsApp:</b> <a href="https://wa.me/6567541322" style="color:#f97316;font-weight:700;">6754 1322</a>',
         fallback:'Halo! Ada yang bisa saya bantu? &#128522;'}
 };
+var btnI18n={
+    zh:{'Browse Luggage':'浏览行李箱','Sizes Guide':'尺寸指南','Contact Us':'联系我们','Corporate Orders':'企业订单',
+        'Travel Tips':'旅行贴士','Emergency Numbers':'紧急电话','Luggage Repair':'行李维修','Recommend For Me':'为我推荐',
+        'Visit Store':'到店参观','Materials':'材质介绍','Nesting Info':'套装收纳'},
+    ja:{'Browse Luggage':'バッグを見る','Sizes Guide':'サイズガイド','Contact Us':'お問い合わせ','Corporate Orders':'法人注文',
+        'Travel Tips':'旅行ガイド','Emergency Numbers':'緊急連絡先','Luggage Repair':'修理ガイド','Recommend For Me':'おすすめ',
+        'Visit Store':'店舗案内','Materials':'素材について'},
+    ko:{'Browse Luggage':'가방 보기','Sizes Guide':'사이즈 가이드','Contact Us':'연락처','Corporate Orders':'기업 주문',
+        'Travel Tips':'여행 팁','Emergency Numbers':'긴급 전화','Luggage Repair':'수리 안내','Recommend For Me':'추천해주세요',
+        'Visit Store':'매장 방문'},
+    ms:{'Browse Luggage':'Lihat Bagasi','Sizes Guide':'Panduan Saiz','Contact Us':'Hubungi Kami','Corporate Orders':'Pesanan Korporat',
+        'Travel Tips':'Tips Perjalanan','Emergency Numbers':'Nombor Kecemasan','Luggage Repair':'Baiki Bagasi','Recommend For Me':'Cadangkan'},
+    th:{'Browse Luggage':'ดูกระเป๋า','Sizes Guide':'คู่มือขนาด','Contact Us':'ติดต่อเรา','Recommend For Me':'แนะนำให้ฉัน'},
+    vi:{'Browse Luggage':'Xem vali','Sizes Guide':'Hướng dẫn kích cỡ','Contact Us':'Liên hệ','Recommend For Me':'Gợi ý cho tôi'},
+    id:{'Browse Luggage':'Lihat Koper','Sizes Guide':'Panduan Ukuran','Contact Us':'Hubungi Kami','Recommend For Me':'Rekomendasikan'}
+};
+function trBtn(label,lang){return (btnI18n[lang]&&btnI18n[lang][label])||label;}
 function botReply(input){
     var q=input.toLowerCase(),reply='',qr=[],lang=detectLang(input);
     var L=i18n[lang]||{};
     // Match intent regardless of language
-    var isLuggage=q.match(/luggage|suitcase|browse|trolley|cabin|bag|行李|箱|バッグ|スーツケース|가방|캐리어|bagasi|beg|vali|koper|กระเป๋า/);
-    var isSize=q.match(/size|dimension|inch|尺寸|大きさ|サイズ|크기|사이즈|saiz/);
-    var isContact=q.match(/contact|email|phone|address|visit|store|showroom|whatsapp|联系|地址|电话|連絡|住所|電話|연락|주소|전화|hubungi|alamat|telefon|ติดต่อ|lien he|dia chi/);
-    var isCorporate=q.match(/corporate|bulk|custom|logo|company|branding|企业|定制|企業|カスタム|기업|커스텀|korporat|perusahaan/);
-    var isEmergency=q.match(/emergency|help number|police|ambulance|embassy|紧急|急救|大使馆|緊急|救急|대사관|긴급|kecemasan|darurat|khan cap|ฉุกเฉิน/);
-    var isRepair=q.match(/repair|fix|stuck|broken|wheel|zipper|zip|lock|tsa|reset|维修|卡住|坏|修理|壊れ|ジッパー|ロック|수리|고장|잠금|rosak|rusak|ซ่อม|hỏng/);
-    var isPrice=q.match(/price|cheap|cost|how much|价格|多少钱|便宜|値段|安い|가격|싼|harga|murah|gia|ราคา/);
-    var isTravel=q.match(/travel|trip|pack|insurance|japan|korea|thai|europe|usa|australia|vietnam|indonesia|旅行|旅游|打包|保险|日本|韩国|泰国|欧洲|旅行|パッキング|여행|perjalanan|du lich|เที่ยว/);
-    var isRecommend=q.match(/recommend|suggest|best|which|什么好|推荐|おすすめ|추천|cadangan|goi y|แนะนำ/);
+    var isLuggage=q.match(/luggage|suitcase|browse|trolley|cabin|bag|行李|旅行包|旅行袋|背包|箱子|箱|包|バッグ|スーツケース|リュック|가방|캐리어|배낭|bagasi|beg|vali|koper|กระเป๋า/);
+    var isSize=q.match(/size|dimension|inch|寸|尺寸|大きさ|サイズ|인치|크기|사이즈|saiz/);
+    var isContact=q.match(/contact|email|phone|address|visit|store|showroom|whatsapp|联系|地址|电话|在哪|營業|連絡|住所|電話|연락|주소|전화|hubungi|alamat|telefon|ติดต่อ|lien he|dia chi/);
+    var isCorporate=q.match(/corporate|bulk|custom|logo|company|branding|企业|定制|公司|印logo|企業|カスタム|기업|커스텀|korporat|perusahaan/);
+    var isEmergency=q.match(/emergency|help number|police|ambulance|embassy|紧急|急救|大使馆|报警|緊急|救急|대사관|긴급|kecemasan|darurat|khan cap|ฉุกเฉิน/);
+    var isRepair=q.match(/repair|fix|stuck|broken|wheel|zipper|zip|lock|tsa|reset|维修|卡住|坏了|修理|锁|拉链|轮子|壊れ|ジッパー|ロック|수리|고장|잠금|rosak|rusak|ซ่อม|hỏng/);
+    var isPrice=q.match(/price|cheap|cost|how much|价格|多少钱|便宜|几块|値段|安い|가격|싼|얼마|harga|murah|gia|ราคา/);
+    var isTravel=q.match(/travel tip|trip tip|pack tip|insurance|japan trip|korea trip|thai trip|europe trip|usa trip|australia trip|vietnam trip|indonesia trip|旅游攻略|打包|保险|日本攻略|韩国攻略|泰国攻略|欧洲攻略|パッキング|여행팁|perjalanan|du lich|เที่ยว/);
+    var isRecommend=q.match(/recommend|suggest|best|which one|什么好|推荐|哪个|おすすめ|추천|어떤|cadangan|goi y|แนะนำ/);
     var isDelivery=q.match(/delivery|shipping|deliver|send|配送|快递|配達|배송|penghantaran|giao hang|จัดส่ง/);
     var isCruise=q.match(/disney|cruise|邮轮|クルーズ|크루즈|pelayaran/);
     var isNest=q.match(/nest|fit inside|套装|收纳|入れ子|네스팅/);
@@ -1182,12 +1199,12 @@ function botReply(input){
     } else if(isCorporate){
         reply=L.corporate||'Corporate Orders — Our Specialty! &#127942;<br><br><b>7 Branding Methods:</b><br>1. Silkscreen Printing — best for large logos, single-colour<br>2. Embroidery — premium look, durable, multi-colour<br>3. Laser Engraving — permanent, elegant finish<br>4. Cast Moulding — 3D metal badges, premium gifts<br>5. Debossing — pressed into leather/fabric<br>6. Metal Tags — attachable branded plates<br>7. Adhesive Stickers — cost-effective, removable<br><br><b>Order Info:</b><br>&#10004; No minimum for ready stock items<br>&#10004; Custom branding from 50 pieces<br>&#10004; 2-4 week turnaround<br>&#10004; Bulk discounts for 10+ pieces<br>&#10004; Free delivery for 50+ pieces<br><br><b>Trusted by:</b> ExxonMobil, Kao, Nu Skin, Medtronic, Hologic, Expedia, NTU, SMU & 50+ organisations<br><br>WhatsApp <a href="https://wa.me/6567541322" style="color:#f97316;font-weight:700;">6754 1322</a> for a free quote!';
         qr=['Browse Luggage','Contact Us'];
-    } else if(isTravel){
-        reply=L.travel||'Travel Tips from Luggage Experts: &#127757;<br><br><b>Packing Tips:</b><br>&#10004; Use packing cubes — one colour per family member<br>&#10004; Roll clothes instead of folding (saves 30% space)<br>&#10004; Always pack a change of clothes in carry-on<br>&#10004; Put heavy items at the bottom near wheels<br><br><b>Country Highlights:</b><br>&#127471;&#127477; <b>Japan:</b> Use Takkyubin luggage forwarding ($15 hotel-to-hotel)<br>&#127472;&#127479; <b>Korea:</b> Outlet shopping — bring expandable luggage!<br>&#127481;&#127469; <b>Thailand:</b> Lock bags at night markets, use money belt<br>&#127466;&#127482; <b>Europe:</b> Train weight limits 20-25kg, pack light<br>&#127482;&#127480; <b>USA:</b> TSA locks mandatory for checked bags<br><br><b>Insurance:</b> Min coverage: Medical $200K (USA/Europe $500K+), luggage loss $3K-5K, flight delay $100-200/6hrs<br><br>Full guides: <a href="travel-tips.html" style="color:#f97316;font-weight:700;">Travel Tips Page</a>';
-        qr=['Emergency Numbers','Luggage Repair','Browse Luggage'];
     } else if(isLuggage||isCruise){
         reply=L.browse||'We carry a wide range of luggage! &#128188;<br><br><b>Hard-case Luggage:</b><br>&#8226; 20" Cabin: from $25.90 (ABS+PC, TSA lock, 360° spinner)<br>&#8226; 24" Medium: from $35.00<br>&#8226; 28" Large: from $45.00<br>&#8226; 3-piece set: from $89.00<br><br><b>Soft-case Luggage:</b><br>&#8226; Expandable fabric from $26.90<br>&#8226; 1680D polyester, water-resistant<br><br><b>Bags:</b><br>&#8226; Laptop backpacks: from $12.90<br>&#8226; Duffel bags: from $15.90<br>&#8226; Waist pouches: from $6.90<br>&#8226; Document bags: from $8.90<br><br><b>Accessories:</b><br>&#8226; TSA locks: from $5.90<br>&#8226; Luggage straps: from $6.00<br>&#8226; Packing cubes: from $8.90<br>&#8226; Luggage covers, tags, wheel covers<br><br>Browse our <a href="shop.html" style="color:#f97316;font-weight:700;">full shop</a>!';
         qr=['Sizes Guide','Recommend For Me','Contact Us'];
+    } else if(isTravel){
+        reply=L.travel||'Travel Tips from Luggage Experts: &#127757;<br><br><b>Packing Tips:</b><br>&#10004; Use packing cubes — one colour per family member<br>&#10004; Roll clothes instead of folding (saves 30% space)<br>&#10004; Always pack a change of clothes in carry-on<br>&#10004; Put heavy items at the bottom near wheels<br><br><b>Country Highlights:</b><br>&#127471;&#127477; <b>Japan:</b> Use Takkyubin luggage forwarding ($15 hotel-to-hotel)<br>&#127472;&#127479; <b>Korea:</b> Outlet shopping — bring expandable luggage!<br>&#127481;&#127469; <b>Thailand:</b> Lock bags at night markets, use money belt<br>&#127466;&#127482; <b>Europe:</b> Train weight limits 20-25kg, pack light<br>&#127482;&#127480; <b>USA:</b> TSA locks mandatory for checked bags<br><br><b>Insurance:</b> Min coverage: Medical $200K (USA/Europe $500K+), luggage loss $3K-5K, flight delay $100-200/6hrs<br><br>Full guides: <a href="travel-tips.html" style="color:#f97316;font-weight:700;">Travel Tips Page</a>';
+        qr=['Emergency Numbers','Luggage Repair','Browse Luggage'];
     } else if(isSize){
         reply=L.size||'Size Guide: &#128207;<br><br><b>20" Cabin:</b> 55x36x22cm — 7-day trips, carry-on approved (SQ, Scoot, AirAsia, Jetstar)<br><b>24" Medium:</b> 65x42x27cm — 10-14 day trips<br><b>28" Large:</b> 75x50x30cm — 2+ weeks or winter trips<br><br><b>Nesting:</b> 20" fits inside 24", which fits inside 28". Perfect for small SG apartments!<br><br><b>Weight:</b><br>&#8226; Hard-case 20": ~3.2kg empty<br>&#8226; Soft-case 20": ~2.8kg empty<br>&#8226; Most airlines allow 7kg cabin, 20-30kg checked<br><br><b>Airline Cabin Limits:</b><br>&#8226; SIA/Scoot: 55x36x22cm, 7kg<br>&#8226; AirAsia: 56x36x23cm, 7kg<br>&#8226; Jetstar: 56x36x23cm, 7kg';
         qr=['Recommend For Me','Browse Luggage','Contact Us'];
@@ -1209,7 +1226,7 @@ function botReply(input){
     }
     var msgs=document.getElementById('chatMessages');var div=document.createElement('div');div.className='chat-msg bot';
     var html='<div class="chat-bubble">'+reply+'</div>';
-    if(qr.length){html+='<div class="chat-quick-replies">';qr.forEach(function(r){html+='<button class="chat-quick-btn" onclick="sendQuick(this)">'+r+'</button>';});html+='</div>';}
+    if(qr.length){html+='<div class="chat-quick-replies">';qr.forEach(function(r){html+='<button class="chat-quick-btn" onclick="sendQuick(this)">'+trBtn(r,lang)+'</button>';});html+='</div>';}
     div.innerHTML=html;msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;
 }
 </script>
