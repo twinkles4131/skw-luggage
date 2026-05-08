@@ -1,0 +1,166 @@
+# Luggage Outlet Singapore — robots.txt
+# https://www.luggageoutlet.sg
+# Last updated: 2026-05-08
+
+# Default: Allow all crawlers
+User-agent: *
+Allow: /
+Disallow: /chatbot-api/
+Disallow: /generated/
+Disallow: /.netlify/
+
+# Sitemap
+Sitemap: https://twinkles4131.github.io/skw-luggage/sitemap.xml
+
+# === SEARCH ENGINE CRAWLERS ===
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /luggage-photos/
+
+# Bing / Microsoft
+User-agent: Bingbot
+Allow: /
+
+# Yandex
+User-agent: Yandex
+Allow: /
+
+# === CHINA SEARCH ENGINES ===
+
+# Baidu (China's #1 search engine)
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Baiduspider-render
+Allow: /
+
+User-agent: Baiduspider-image
+Allow: /luggage-photos/
+
+# Sogou (China's #2 search engine)
+User-agent: Sogou
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+# 360 Search (Haosou)
+User-agent: 360Spider
+Allow: /
+
+# Shenma (UC Browser search — mobile China)
+User-agent: YisouSpider
+Allow: /
+
+# === AI / LLM CRAWLERS ===
+
+# OpenAI (ChatGPT, GPT)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Google AI (Gemini, Bard)
+User-agent: Google-Extended
+Allow: /
+
+# Meta AI (Llama)
+User-agent: FacebookBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Apple AI (Siri, Apple Intelligence)
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Microsoft Copilot
+User-agent: CopilotBot
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# === CHINA AI / LLM CRAWLERS ===
+
+# ByteDance (Doubao, TikTok AI)
+User-agent: Bytespider
+Allow: /
+
+User-agent: ByteDance
+Allow: /
+
+# Baidu AI (ERNIE Bot, Wenxin Yiyan)
+User-agent: Baiduspider
+Allow: /
+
+# Alibaba AI (Tongyi Qianwen / Qwen)
+User-agent: AlibabaBot
+Allow: /
+
+# Tencent AI (Hunyuan)
+User-agent: Tencent
+Allow: /
+
+# DeepSeek AI
+User-agent: DeepSeekBot
+Allow: /
+
+# Zhipu AI (ChatGLM)
+User-agent: ZhipuBot
+Allow: /
+
+# Moonshot AI (Kimi)
+User-agent: MoonshotBot
+Allow: /
+
+# 01.AI (Yi)
+User-agent: 01Bot
+Allow: /
+
+# Minimax (Hailuo AI)
+User-agent: MinimaxBot
+Allow: /
+
+# === SOCIAL MEDIA CRAWLERS ===
+
+# Twitter/X
+User-agent: Twitterbot
+Allow: /
+
+# LinkedIn
+User-agent: LinkedInBot
+Allow: /
+
+# Telegram
+User-agent: TelegramBot
+Allow: /
+
+# WhatsApp
+User-agent: WhatsApp
+Allow: /
+
+# Pinterest
+User-agent: Pinterest
+Allow: /
